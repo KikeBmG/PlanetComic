@@ -1,3 +1,3 @@
 # PlanetComic
-# Quique Gómez
-# Proyecto del CFGS Desarrollo de Aplicaciones Web
+Quique Gómez
+Proyecto del CFGS Desarrollo de Aplicaciones Web
