@@ -1,0 +1,324 @@
+.block {
+	display: block !important;
+}
+
+.none {
+	display: none !important;
+}
+
+.container {
+	margin-top: 3%;
+}
+
+.row{
+	margin-bottom: 2.5rem;
+}
+
+.card-block {
+    margin-left: 1rem !important;
+	margin-bottom: 1rem !important;
+}
+
+.buscador{
+	background-color: #182430 !important;
+	border-color: #1B95E0 !important;
+	color: white !important;
+	width: 40rem !important;
+}
+
+.jumbotron{
+	background-color: #243447 !important;
+	color: #fff !important;
+	margin-top: 10rem;
+}
+
+hr.my-4{
+	background-color: #fff !important;
+}
+
+body{
+	background-color: #141d26 !important;
+}
+
+.navbar{
+	background-color: #243447 !important;
+}
+
+.navbar-toggler{
+	border-color: #1B95E0 !important;
+}
+
+h5 { 
+    display: block;
+    font-size: .83em;
+    margin-top: 1.67em;
+    margin-bottom: 1.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+#contador{
+	text-align: center !important;
+	color: #fff !important;
+	margin-bottom: 2rem !important;
+	max-width: 100% !important;
+}
+
+.botonCard {
+	position:absolute; 
+	bottom:0;  
+	margin-bottom:7px; 
+	margin:7px; 
+	right: 0;
+}
+
+.card-title{
+	height: 5rem;
+    padding-top: 0.5rem;
+}
+
+.modal-lg {
+    max-width: 80% !important;
+}
+.botonEstadoComic{
+	width: 12rem;
+}
+
+.modal-content{
+	background-color: #243447 !important;
+	color: #fff !important; 
+}
+
+.modal-header{
+	border-bottom-color: #141d26 !important;
+}
+
+.modal-footer{
+	border-top-color: #141d26 !important;
+}
+
+.close, .close:hover {
+    color: #fff !important;
+	opacity: 1;
+}
+
+.botones-modal {
+	padding-top: 1rem !important;
+}
+
+.center {
+	text-align: center !important;
+}
+
+.link, .link:hover{
+	color: #1B95E0 !important;
+}
+
+.invisible {
+	display: none;
+}
+.versalitas{
+	font-variant: small-caps
+}
+
+.menos-margen-inf {
+	margin-bottom: 1rem !important;
+}
+
+.img {
+	transform: scale(0.5) !important;
+	-webkit-transform: scale(0.5) !important; /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.5) !important; /* FF3.5+ */
+    -ms-transform: scale(0.5) !important; /* IE9 */
+    -o-transform: scale(0.5) !important; /* Opera 10.5+ */
+}
+img {
+	vertical-align: baseline !important;
+}
+
+.margen-derecho-1{
+	margin-right: 1rem !important;
+}
+
+.margen-izquierdo-3{
+    margin-left: 3rem !important;
+}
+
+.stars-outer {
+	display: inline-block;
+	position: relative;
+}
+
+.stars-outer::before {
+	content: url('../img/iconos/glyphicons-49-star-empty.png') url('../img/iconos/glyphicons-49-star-empty.png') url('../img/iconos/glyphicons-49-star-empty.png') url('../img/iconos/glyphicons-49-star-empty.png') url('../img/iconos/glyphicons-49-star-empty.png');
+}
+ 
+.stars-inner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 0;
+}
+ 
+.stars-inner::before {
+	content:  url('../img/iconos/glyphicons-50-star.png') url('../img/iconos/glyphicons-50-star.png') url('../img/iconos/glyphicons-50-star.png') url('../img/iconos/glyphicons-50-star.png') url('../img/iconos/glyphicons-50-star.png');
+	color: #f8ce0b;
+}
+
+.btn-insert{
+	justify-content: center !important;
+    margin-left: 0rem !important;
+}
+
+.radio-btn{
+	color: #fff !important;
+}
+
+.btn-group-vertical>.btn, .btn-group>.btn {
+    width: 25% !important;
+}
+
+.inputFormulario {
+	background-color: #182430 !important;
+	border-color: #1B95E0 !important;
+    width: 40% !important;
+}
+
+.inputIndex {
+	background-color: #182430 !important;
+	border-color: #1B95E0 !important;
+	color: #fff !important;
+}
+
+.texto-blanco {
+	color: #fff !important;
+}
+
+.custom-file-input ~ .custom-file-label::after {
+    content: "Subir";
+	background-color: #1B95E0 !important;
+	color: #fff !important;
+	border-color: #1B95E0 !important;
+}
+
+.custom-file-input {
+	width: auto !important;	
+}
+
+.exito {
+	background-color: green !important;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	width: 12%;
+    height: 75%;
+    border-radius: 50%;
+}
+.error {
+	background-color: red !important;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	width: 12%;
+    height: 75%;
+    border-radius: 50%;
+}
+.nav-tabs, .nav-link {
+	border-color: #141d26 !important;
+}
+
+.tab-content{
+	padding-top: 1rem !important;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+	color: #fff !important;
+	background-color: #007bff !important;
+}
+
+.botonesTab {
+	background-color: #141d26 !important;
+}
+
+#feedbackKarmaComic {
+	padding-left: 3rem !important;
+}
+
+.card-body-comentarios {
+	background-color: #141d26 !important;
+	border-radius: 1rem !important;
+}
+
+.card-comentarios {
+	border-color: #243447 !important;
+}
+
+.card {
+	background-color: #243447 !important;
+}
+
+#formularioComentar {
+	padding-top: 1rem !important;
+}
+
+.list-inline-item:not(:last-child) {
+    margin-right: 20rem !important;
+}
+
+.margin-bottom-0{
+	margin-bottom: 0rem !important;
+}
+
+.rating-container .filled-stars {
+	color: #ffc107 !important;
+	text-shadow: 1px 1px #1b1e21 !important;
+}
+
+.btn-sample { 
+  color: #ffffff; 
+  background-color: #611BBD; 
+  border-color: #611BBD; 
+} 
+ 
+.btn-sample:hover, 
+.btn-sample:focus, 
+.btn-sample:active, 
+.btn-sample.active, 
+.open .dropdown-toggle.btn-sample { 
+  color: #ffffff; 
+  background-color: #49247A; 
+  border-color: #49247A; 
+} 
+ 
+.btn-sample:active, 
+.btn-sample.active, 
+.open .dropdown-toggle.btn-sample { 
+  background-image: none; 
+} 
+ 
+.btn-sample.disabled, 
+.btn-sample[disabled], 
+fieldset[disabled] .btn-sample, 
+.btn-sample.disabled:hover, 
+.btn-sample[disabled]:hover, 
+fieldset[disabled] .btn-sample:hover, 
+.btn-sample.disabled:focus, 
+.btn-sample[disabled]:focus, 
+fieldset[disabled] .btn-sample:focus, 
+.btn-sample.disabled:active, 
+.btn-sample[disabled]:active, 
+fieldset[disabled] .btn-sample:active, 
+.btn-sample.disabled.active, 
+.btn-sample[disabled].active, 
+fieldset[disabled] .btn-sample.active { 
+  background-color: #611BBD; 
+  border-color: #611BBD; 
+} 
+ 
+.btn-sample .badge { 
+  color: #611BBD; 
+  background-color: #611BBD; 
+}
