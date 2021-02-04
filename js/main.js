@@ -37,34 +37,34 @@ let mostrarComicsEstado = () => {
 
 	$.getJSON('mostrarComicsUsuario.php?estado=' + estado, data => {
 		let cont = 0;
-		let aux = "";
+		let aux = '';
 		let contTotal = 0;
 
-		aux += "<div class='row'>";//inicio div fila
+		aux += `<div class="row">`;//inicio div fila
 
 		for (i = 0; i < data.length; i++) {
 			if (cont == 3) {
-				aux += "</div>"; // cierra div row
+				aux += `</div>`; // cierra div row
 				aux += "<div class='row'>";//inicio de nuevo div fila
 				cont = 0; //resetea el contador
 			}
 
-			aux += "<div class='card bg-dark text-white' style='width: 20rem;'>"; //dentro del div columna inicio un div card
+			aux += `<div class="card bg-dark text-white" style="width: 20rem;">`; //dentro del div columna inicio un div card
 
-			aux += "<img src='../img/portadas/" + data[i].portada + "' class='card-img-top' width='320px' height='500px'>"; //imagen dentro del div item
-			aux += "<div class='card-block'>"; // abre card-block
-			aux += "<h4 class='card-title'>" + data[i].nombreComic + "</h4>";
-			aux += "<a class='btn btn-primary align-items-end' href='#myModal' onClick='modalDatosComic(" + data[i].idComic + ")' data-toggle='modal' data-target='.bd-example-modal-lg'>Ver detalles</a>";
+			aux += `<img src="../img/portadas/${data[i].portada}" class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
+			aux += `<div class="card-block">`; // abre card-block
+			aux += `<h4 class="card-title">${data[i].nombreComic}</h4>`;
+			aux += `<a class="btn btn-primary align-items-end" href="#myModal" onClick="${modalDatosComic(data[i].idComic)}" data-toggle="modal" data-target=".bd-example-modal-lg">Ver detalles</a>`;
 
-			aux += "</div>"; //cierra div card-block
-			aux += "</div>"; //cierra div card
+			aux += `</div>`; //cierra div card-block
+			aux += `</div>`; //cierra div card
 
 			cont++;
 			contTotal++;
 		}
-		aux += "</div>"; //cierra div fila
+		aux += `</div>`; //cierra div fila
 
-		$('#contador').html(estado + " (" + contTotal + ")");
+		$('#contador').html(`${estado} (${contTotal})`);
 
 		$('#comics').html(aux);
 	});

@@ -36,36 +36,36 @@ $(document).ready(() => {
 	}
 
 	$.getJSON('buscaEditoriales.php', data => {
-		let auxEditoriales = "";
+		let auxEditoriales = '';
 
-		auxEditoriales += "<option disabled selected> -- Elige Editorial -- </option>";
+		auxEditoriales += `<option disabled selected> -- Elige Editorial -- </option>`;
 
 		for (i = 0; i < data.length; i++) {
-			auxEditoriales += "<option value='" + data[i].idEditorial + "'>" + data[i].nombreEditorial + "</option>";
+			auxEditoriales += `<option value="${data[i].idEditorial}">${data[i].nombreEditorial}</option>`;
 		}
 
 		$('#selectEditorial').html(auxEditoriales);
 	});
 
 	$.getJSON('buscaGuionistas.php', data => {
-		let auxGuionistas = "";
+		let auxGuionistas = '';
 
-		auxGuionistas += "<option disabled selected> -- Elige Guionista -- </option>";
+		auxGuionistas += `<option disabled selected> -- Elige Guionista -- </option>`;
 
 		for (i = 0; i < data.length; i++) {
-			auxGuionistas += "<option value='" + data[i].idGuionista + "'>" + data[i].nombreGuionista + "</option>";
+			auxGuionistas += `<option value="${data[i].idGuionista}">${data[i].nombreGuionista}</option>`;
 		}
 
 		$('#selectGuionista').html(auxGuionistas);
 	});
 
 	$.getJSON('buscaIlustradores.php', data => {
-		let auxIlustradores = "";
+		let auxIlustradores = '';
 
-		auxIlustradores += "<option disabled selected> -- Elige Ilustrador -- </option>";
+		auxIlustradores += `<option disabled selected> -- Elige Ilustrador -- </option>`;
 
 		for (i = 0; i < data.length; i++) {
-			auxIlustradores += "<option value='" + data[i].idIlustrador + "'>" + data[i].nombreIlustrador + "</option>";
+			auxIlustradores += `<option value="${data[i].idIlustrador}">${data[i].nombreIlustrador}</option>`;
 		}
 
 		$('#selectIlustrador').html(auxIlustradores);
