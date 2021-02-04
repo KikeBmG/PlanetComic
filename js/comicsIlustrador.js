@@ -1,6 +1,6 @@
 let calculate_age = dob => {
 	//param dob =  date of birthday
-	let fechaNac = dob.split("-");
+	let fechaNac = dob.split('-');
 	let formattedFecha = new Date(fechaNac[2], fechaNac[1], fechaNac[0]);
 
 	let diff_ms = Date.now() - formattedFecha.getTime();

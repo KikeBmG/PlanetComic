@@ -1,7 +1,7 @@
 $(document).ready(() => {
 	let idEditorial = $('span.invisible').attr('id');
 
-	$.getJSON("datosEditorial.php?idEditorial=" + idEditorial, data => {
+	$.getJSON('datosEditorial.php?idEditorial=' + idEditorial, data => {
 		let aux = "";
 
 		aux += "<div class='row'>"
@@ -39,7 +39,7 @@ $(document).ready(() => {
 		$('#datos').html(aux);
 	});
 
-	$.getJSON("comicsEditorial.php?idEditorial=" + idEditorial, data => {
+	$.getJSON('comicsEditorial.php?idEditorial=' + idEditorial, data => {
 		let cont = 0;
 		let aux2 = "";
 
@@ -72,16 +72,16 @@ $(document).ready(() => {
 
 let votaKarmaEditorial = (idEditorial, karma) => {
 	$.ajax({
-		type: "POST",
-		url: "../php/votarKarmaEditorial.php",
+		type: 'POST',
+		url: '../php/votarKarmaEditorial.php',
 		data: {
 			idEditorial: idEditorial,
 			karma: karma
 		},
 		success: data => {
-			$(".votakarma").prop("disabled", true);
-			$("#feedbackKarmaEditorial").removeClass("none");
-			$("#feedbackKarmaEditorial").addClass("block");
+			$('.votakarma').prop('disabled', true);
+			$('#feedbackKarmaEditorial').removeClass('none');
+			$('#feedbackKarmaEditorial').addClass('block');
 		}
 	});
 }

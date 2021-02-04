@@ -1,5 +1,5 @@
 let modalDatosComic = idComic => {
-	$.getJSON("mostrarComic.php?idComic=" + idComic, data => {
+	$.getJSON('mostrarComic.php?idComic=' + idComic, data => {
 
 		let aux = "";
 
@@ -97,66 +97,66 @@ let modalDatosComic = idComic => {
 
 
 		$('#modal').html(aux);
-		$("#myModal").modal();
+		$('#myModal').modal();
 
 		$('#myModal').on('hidden.bs.modal', e => {
 			$(this).remove();
 		});
 
-		$("#estrellas").rating('create');
+		$('#estrellas').rating('create');
 
 		let auxMediaGlobal = parseInt(data[0].mediaglobal);
 
 		if (auxMediaGlobal >= 9) {
-			$("#mediaGlobal").addClass('btn-success');
+			$('#mediaGlobal').addClass('btn-success');
 		}
 		else if (auxMediaGlobal >= 7) {
-			$("#mediaGlobal").addClass('btn-primary');
+			$('#mediaGlobal').addClass('btn-primary');
 		}
 		else if (auxMediaGlobal >= 5) {
-			$("#mediaGlobal").addClass('btn-info');
+			$('#mediaGlobal').addClass('btn-info');
 		}
 		else if (auxMediaGlobal >= 3) {
-			$("#mediaGlobal").addClass('btn-warning');
+			$('#mediaGlobal').addClass('btn-warning');
 		}
 		if (auxMediaGlobal < 3) {
-			$("#mediaGlobal").addClass('btn-danger');
+			$('#mediaGlobal').addClass('btn-danger');
 		}
 
-		$.getJSON("compruebaEstado.php?idComic=" + idComic, dato => {
+		$.getJSON('compruebaEstado.php?idComic=' + idComic, dato => {
 			if (dato.length > 0) {
 				switch (dato[0].estado) {
-					case "Leido":
-						$("#botonLeido").removeClass("btn-primary");
-						$("#botonLeido").addClass("btn-success");
+					case 'Leido':
+						$('#botonLeido').removeClass('btn-primary');
+						$('#botonLeido').addClass('btn-success');
 						break;
-					case "Leyendo":
-						$("#botonLeyendo").removeClass("btn-primary");
-						$("#botonLeyendo").addClass("btn-warning");
+					case 'Leyendo':
+						$('#botonLeyendo').removeClass('btn-primary');
+						$('#botonLeyendo').addClass('btn-warning');
 						break;
-					case "Pendiente":
-						$("#botonPendiente").removeClass("btn-primary");
-						$("#botonPendiente").addClass("btn-danger");
+					case 'Pendiente':
+						$('#botonPendiente').removeClass('btn-primary');
+						$('#botonPendiente').addClass('btn-danger');
 						break;
 				}
 				let auxMedia = parseInt(dato[0].puntuacion);
 				console.log(dato[0].puntuacion);
 				if (auxMedia >= 9) {
-					$("#media").addClass('btn-success');
+					$('#media').addClass('btn-success');
 				}
 				else if (auxMedia >= 7) {
-					$("#media").addClass('btn-primary');
+					$('#media').addClass('btn-primary');
 				}
 				else if (auxMedia >= 5) {
-					$("#media").addClass('btn-info');
+					$('#media').addClass('btn-info');
 				}
 				else if (auxMedia >= 3) {
-					$("#media").addClass('btn-warning');
+					$('#media').addClass('btn-warning');
 				}
 				if (auxMedia < 3) {
-					$("#media").addClass('btn-danger');
+					$('#media').addClass('btn-danger');
 				}
-				$("#media").html("Mi Valoración: " + dato[0].puntuacion);
+				$('#media').html("Mi Valoración: " + dato[0].puntuacion);
 			}
 		});
 	});
@@ -164,16 +164,16 @@ let modalDatosComic = idComic => {
 
 let votaKarmaComic = (idComic, karma) => {
 	$.ajax({
-		type: "POST",
-		url: "../php/votarKarmaComic.php",
+		type: 'POST',
+		url: '../php/votarKarmaComic.php',
 		data: {
 			idComic: idComic,
 			karma: karma
 		},
 		success: data => {
-			$(".votakarma").prop("disabled", true);
-			$("#feedbackKarmaComic").removeClass("none");
-			$("#feedbackKarmaComic").addClass("block");
+			$('.votakarma').prop('disabled', true);
+			$('#feedbackKarmaComic').removeClass('none');
+			$('#feedbackKarmaComic').addClass('block');
 		}
 	});
 }
@@ -181,45 +181,45 @@ let votaKarmaComic = (idComic, karma) => {
 let cambiaEstado = (vEstado, idComic) => {
 	switch (vEstado) {
 		case 1:
-			vEstado = "Leido";
+			vEstado = 'Leido';
 			break;
 		case 2:
-			vEstado = "Leyendo";
+			vEstado = 'Leyendo';
 			break;
 		case 3:
-			vEstado = "Pendiente";
+			vEstado = 'Pendiente';
 			break;
 	}
 
 	$.ajax({
-		type: "POST",
-		url: "../php/insertarBiblioteca.php",
+		type: 'POST',
+		url: '../php/insertarBiblioteca.php',
 		data: {
 			idComic: idComic,
 			estado: vEstado
 		},
 		success: data => {
 			switch (vEstado) {
-				case "Leido":
-					$("#botonLeyendo").removeClass("btn-warning");
-					$("#botonPendiente").removeClass("btn-danger");
-					$(".botonEstadoComic").addClass("btn-primary");
-					$("#botonLeido").removeClass("btn-primary");
-					$("#botonLeido").addClass("btn-success");
+				case 'Leido':
+					$('#botonLeyendo').removeClass('btn-warning');
+					$('#botonPendiente').removeClass('btn-danger');
+					$('.botonEstadoComic').addClass('btn-primary');
+					$('#botonLeido').removeClass('btn-primary');
+					$('#botonLeido').addClass('btn-success');
 					break;
-				case "Leyendo":
-					$("#botonLeido").removeClass("btn-success");
-					$("#botonPendiente").removeClass("btn-danger");
-					$(".botonEstadoComic").addClass("btn-primary");
-					$("#botonLeyendo").removeClass("btn-primary");
-					$("#botonLeyendo").addClass("btn-warning");
+				case 'Leyendo':
+					$('#botonLeido').removeClass('btn-success');
+					$('#botonPendiente').removeClass('btn-danger');
+					$('.botonEstadoComic').addClass('btn-primary');
+					$('#botonLeyendo').removeClass('btn-primary');
+					$('#botonLeyendo').addClass('btn-warning');
 					break;
-				case "Pendiente":
-					$("#botonLeido").removeClass("btn-success");
-					$("#botonLeyendo").removeClass("btn-warning");
-					$(".botonEstadoComic").addClass("btn-primary");
-					$("#botonPendiente").removeClass("btn-primary");
-					$("#botonPendiente").addClass("btn-danger");
+				case 'Pendiente':
+					$('#botonLeido').removeClass('btn-success');
+					$('#botonLeyendo').removeClass('btn-warning');
+					$('.botonEstadoComic').addClass('btn-primary');
+					$('#botonPendiente').removeClass('btn-primary');
+					$('#botonPendiente').addClass('btn-danger');
 					break;
 			}
 		}
@@ -227,7 +227,7 @@ let cambiaEstado = (vEstado, idComic) => {
 }
 
 let muestraComentarios = idComic => {
-	$.getJSON("mostrarComentariosComic.php?idComic=" + idComic, data => {
+	$.getJSON('mostrarComentariosComic.php?idComic=' + idComic, data => {
 		let auxComentarios = "";
 
 		if (data.length == 0) {
@@ -309,45 +309,45 @@ let muestraComentarios = idComic => {
 }
 
 let verSpoiler = idComentario => {
-	if ($('#comentario' + idComentario).hasClass("none") == true) {
-		$('#comentario' + idComentario).removeClass("none");
-		$('#comentario' + idComentario).addClass("block");
+	if ($('#comentario' + idComentario).hasClass('none') == true) {
+		$('#comentario' + idComentario).removeClass('none');
+		$('#comentario' + idComentario).addClass('block');
 	}
-	else if ($('#comentario' + idComentario).hasClass("block") == true) {
-		$('#comentario' + idComentario).removeClass("block");
-		$('#comentario' + idComentario).addClass("none");
+	else if ($('#comentario' + idComentario).hasClass('block') == true) {
+		$('#comentario' + idComentario).removeClass('block');
+		$('#comentario' + idComentario).addClass('none');
 	}
 }
 
 let votaKarmaComentario = (idComentario, spoiler) => {
 	$.ajax({
-		type: "POST",
-		url: "../php/votarKarmaComentario.php",
+		type: 'POST',
+		url: '../php/votarKarmaComentario.php',
 		data: {
 			idComentario: idComentario,
 			spoiler: spoiler
 		},
 		success: data => {
-			$('.votakarmaComentario' + idComentario).prop("disabled", true);
-			$('#feedbackKarmaComentario' + idComentario).removeClass("none");
-			$('#feedbackKarmaComentario' + idComentario).addClass("block");
+			$('.votakarmaComentario' + idComentario).prop('disabled', true);
+			$('#feedbackKarmaComentario' + idComentario).removeClass('none');
+			$('#feedbackKarmaComentario' + idComentario).addClass('block');
 		}
 	});
 }
 
 let enviarVotacion = idComic => {
-	let voto = ($("#estrellas").val()) * 2;
+	let voto = ($('#estrellas').val()) * 2;
 
 	if (voto !== null) {
 		$.ajax({
-			type: "POST",
-			url: "../php/insertarPuntuacion.php",
+			type: 'POST',
+			url: '../php/insertarPuntuacion.php',
 			data: {
 				idComic: idComic,
 				puntuacion: voto
 			},
 			success: data => {
-				$('#botonEnviarVotacion').addClass("disabled");
+				$('#botonEnviarVotacion').addClass('disabled');
 			}
 		});
 	}

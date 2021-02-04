@@ -24,19 +24,18 @@ let marcaActivo = elem => {
 	elem.classList.add('active');
 	elem.classList.add('h5');
 
-	let nuevoId = elem.id;
-	$('span.invisible').attr('id', nuevoId);
+	$('span.invisible').attr('id', elem.id);
 }
 
 let mostrarComicsEstado = () => {
 	//let estado = this.id;
 	let estado = $('span.invisible').attr('id');
 
-	if (estado == "") { // Carga por defecto los Leyendo
-		estado = "Leyendo";
+	if (estado == '') { // Carga por defecto los Leyendo
+		estado = 'Leyendo';
 	}
 
-	$.getJSON("mostrarComicsUsuario.php?estado=" + estado, data => {
+	$.getJSON('mostrarComicsUsuario.php?estado=' + estado, data => {
 		let cont = 0;
 		let aux = "";
 		let contTotal = 0;

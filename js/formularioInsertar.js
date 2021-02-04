@@ -1,29 +1,29 @@
 $(document).ready(() => {
 	$('.custom-file-input').on('change', () => {
 		let fileName = $(this).val().split('\\').pop();
-		$(this).next('.custom-file-label').addClass("selected").html(fileName);
-		$(this).next('.custom-file-label').addClass("texto-blanco").html(fileName);
+		$(this).next('.custom-file-label').addClass('selected').html(fileName);
+		$(this).next('.custom-file-label').addClass('texto-blanco').html(fileName);
 	});
 
-	$(document).on("change", "input[type=radio]", () => {
-		switch ($(this).attr("id")) {
-			case "editorial":
-				cambiaFormulario("editorial");
+	$(document).on('change', 'input[type=radio]', () => {
+		switch ($(this).attr('id')) {
+			case 'editorial':
+				cambiaFormulario('editorial');
 				break;
-			case "guionista":
-				cambiaFormulario("guionista");
+			case 'guionista':
+				cambiaFormulario('guionista');
 				break;
-			case "ilustrador":
-				cambiaFormulario("ilustrador");
+			case 'ilustrador':
+				cambiaFormulario('ilustrador');
 				break;
-			case "comic":
-				cambiaFormulario("comic");
+			case 'comic':
+				cambiaFormulario('comic');
 				break;
 		}
 	});
 
 	let cambiaFormulario = form => {
-		let aux = "form" + form;
+		let aux = 'form' + form;
 		let a = document.getElementsByClassName('formulario');
 
 		for (i = 0; i < a.length; i++) {
@@ -35,7 +35,7 @@ $(document).ready(() => {
 		document.getElementById(aux).classList.add('block');
 	}
 
-	$.getJSON("buscaEditoriales.php", data => {
+	$.getJSON('buscaEditoriales.php', data => {
 		let auxEditoriales = "";
 
 		auxEditoriales += "<option disabled selected> -- Elige Editorial -- </option>";
@@ -47,7 +47,7 @@ $(document).ready(() => {
 		$('#selectEditorial').html(auxEditoriales);
 	});
 
-	$.getJSON("buscaGuionistas.php", data => {
+	$.getJSON('buscaGuionistas.php', data => {
 		let auxGuionistas = "";
 
 		auxGuionistas += "<option disabled selected> -- Elige Guionista -- </option>";
@@ -59,7 +59,7 @@ $(document).ready(() => {
 		$('#selectGuionista').html(auxGuionistas);
 	});
 
-	$.getJSON("buscaIlustradores.php", data => {
+	$.getJSON('buscaIlustradores.php', data => {
 		let auxIlustradores = "";
 
 		auxIlustradores += "<option disabled selected> -- Elige Ilustrador -- </option>";
