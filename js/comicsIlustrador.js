@@ -70,7 +70,7 @@ $(document).ready(() => {
 
 		aux += `<div class="row">`;//inicio div fila
 
-		for (i = 0; i < data.length; i++) {
+		for (let i = 0; i < data.length; i++) {
 			if (cont == 3) {
 				aux += `</div>`; // cierra div row
 				aux += `<div class="row">`;//inicio de nuevo div fila

@@ -3,22 +3,22 @@ $(document).ready(() => {
 	mostrarComicsEstado();
 
 	// Marca por defecto Leyendo como activa (visualmente)
-	document.getElementById('Leyendo').classList.add('active');
-	document.getElementById('Leyendo').classList.add('h5');
+	$('#Leyendo').classList.add('active');
+	$('#Leyendo').classList.add('h5');
 
 	// añade los eventos de click
-	document.getElementById('Leido').addEventListener('click', mostrarComicsEstado, false);
-	document.getElementById('Leyendo').addEventListener('click', mostrarComicsEstado, false);
-	document.getElementById('Pendiente').addEventListener('click', mostrarComicsEstado, false);
+	$('#Leido').addEventListener('click', mostrarComicsEstado, false);
+	$('#Leyendo').addEventListener('click', mostrarComicsEstado, false);
+	$('#Pendiente').addEventListener('click', mostrarComicsEstado, false);
 });
 
 let marcaActivo = elem => {
-	let a = document.getElementsByClassName('nav-link');
+	let links = $('.nav-link');
 
-	for (i = 0; i < a.length; i++) {
+	for (let i = 0; i < links.length; i++) {
 		// Remove the class 'active' if it exists
-		a[i].classList.remove('active')
-		a[i].classList.remove('h5')
+		links[i].classList.remove('active')
+		links[i].classList.remove('h5')
 	}
 	// add 'active' classs to the element that was clicked
 	elem.classList.add('active');
@@ -42,7 +42,7 @@ let mostrarComicsEstado = () => {
 
 		aux += `<div class="row">`;//inicio div fila
 
-		for (i = 0; i < data.length; i++) {
+		for (let i = 0; i < data.length; i++) {
 			if (cont == 3) {
 				aux += `</div>`; // cierra div row
 				aux += "<div class='row'>";//inicio de nuevo div fila

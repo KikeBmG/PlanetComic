@@ -22,9 +22,9 @@ $(document).ready(() => {
 
 		aux += `<div class="row">`;
 
-		aux += `<button class="btn btn-success my-2 my-sm-0 margen-derecho-1 votakarma" onclick="${votaKarmaEditorial(idEditorial,(+1))}"><img src="../img/iconos/glyphicons-344-thumbs-up.png" height="16px" alt="positivo"></button>`;
+		aux += `<button class="btn btn-success my-2 my-sm-0 margen-derecho-1 votakarma" onclick="${votaKarmaEditorial(idEditorial, (+1))}"><img src="../img/iconos/glyphicons-344-thumbs-up.png" height="16px" alt="positivo"></button>`;
 
-		aux += `<button class="btn btn-danger my-2 my-sm-0 votakarma" onclick="${votaKarmaEditorial(idEditorial,(-1))}"><img src="../img/iconos/glyphicons-345-thumbs-down.png" height="16px" alt="negativo"></button>`;
+		aux += `<button class="btn btn-danger my-2 my-sm-0 votakarma" onclick="${votaKarmaEditorial(idEditorial, (-1))}"><img src="../img/iconos/glyphicons-345-thumbs-down.png" height="16px" alt="negativo"></button>`;
 
 		aux += `</div>`;
 
@@ -45,7 +45,7 @@ $(document).ready(() => {
 
 		aux2 += `<div class="row">`;//inicio div fila
 
-		for (i = 0; i < data.length; i++) {
+		for (let i = 0; i < data.length; i++) {
 			if (cont == 3) {
 				aux2 += `</div>`; // cierra div row
 				aux2 += `<div class="row">`;//inicio de nuevo div fila

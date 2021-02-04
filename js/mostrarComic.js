@@ -241,7 +241,7 @@ let muestraComentarios = idComic => {
 			auxComentarios += `</div>`; //cierra row
 		}
 		else {
-			for (i = 0; i < data.length; i++) {
+			for (let i = 0; i < data.length; i++) {
 
 				auxComentarios += `<div class'row">`; //abre row
 
@@ -308,14 +308,8 @@ let muestraComentarios = idComic => {
 }
 
 let verSpoiler = idComentario => {
-	if ($('#comentario' + idComentario).hasClass('none') == true) {
-		$('#comentario' + idComentario).removeClass('none');
-		$('#comentario' + idComentario).addClass('block');
-	}
-	else if ($('#comentario' + idComentario).hasClass('block') == true) {
-		$('#comentario' + idComentario).removeClass('block');
-		$('#comentario' + idComentario).addClass('none');
-	}
+	$('#comentario' + idComentario).toggleClass('none');
+	$('#comentario' + idComentario).toggleClass('block');
 }
 
 let votaKarmaComentario = (idComentario, spoiler) => {
