@@ -2,4 +2,4 @@
 
 _Quique Gómez. Diciembre 2017._
 
-_Proyecto del CFGS Desarrollo de Aplicaciones Web_
+_Proyecto Final del C.F.G.S. Desarrollo de Aplicaciones Web_
