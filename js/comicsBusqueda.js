@@ -1,7 +1,7 @@
-$(document).ready(function () {
+$(document).ready(() => {
 	let nombre = $('span.invisible').attr('id');
 
-	$.getJSON("datosBuscador.php?nombre=" + nombre, function (data) {
+	$.getJSON("datosBuscador.php?nombre=" + nombre, data => {
 		let cont = 0;
 		let aux = "";
 		let contTotal = 0;

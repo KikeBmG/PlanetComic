@@ -1,4 +1,4 @@
-function calculate_age(dob) {
+let calculate_age = dob => {
 	//param dob =  date of birthday
 	let fechaNac = dob.split("-");
 	let formattedFecha = new Date(fechaNac[2], fechaNac[1], fechaNac[0]);
@@ -9,11 +9,10 @@ function calculate_age(dob) {
 	return Math.abs(age_dt.getUTCFullYear() - 1970);
 }
 
-$(document).ready(function () {
-
+$(document).ready(() => {
 	let idIlustrador = $('span.invisible').attr('id');
 
-	$.getJSON("datosIlustrador.php?idIlustrador=" + idIlustrador, function (data) {
+	$.getJSON("datosIlustrador.php?idIlustrador=" + idIlustrador, data => {
 
 		let aux = "";
 
@@ -66,7 +65,7 @@ $(document).ready(function () {
 		$('#datos').html(aux);
 	});
 
-	$.getJSON("comicsIlustrador.php?idIlustrador=" + idIlustrador, function (data) {
+	$.getJSON("comicsIlustrador.php?idIlustrador=" + idIlustrador, data => {
 		let cont = 0;
 		let aux = "";
 
@@ -97,15 +96,15 @@ $(document).ready(function () {
 	});
 });
 
-function votaKarmaIlustrador(idIlustrador, karma) {
-	let idIlustrador = idIlustrador;
-	let karma = karma;
-
+let votaKarmaIlustrador = (idIlustrador, karma) => {
 	$.ajax({
 		type: "POST",
 		url: "../php/votarKarmaIlustrador.php",
-		data: { idIlustrador: idIlustrador, karma: karma },
-		success: function (data) {
+		data: {
+			idIlustrador: idIlustrador,
+			karma: karma
+		},
+		success: data => {
 			$(".votakarma").prop("disabled", true);
 			$("#feedbackKarmaIlustrador").removeClass("none");
 			$("#feedbackKarmaIlustrador").addClass("block");

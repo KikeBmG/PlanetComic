@@ -1,4 +1,4 @@
-function calculate_age(dob) {
+let calculate_age = dob => {
 	//param dob =  date of birthday
 	let fechaNac = dob.split("-");
 	let formattedFecha = new Date(fechaNac[2], fechaNac[1], fechaNac[0]);
@@ -9,10 +9,10 @@ function calculate_age(dob) {
 	return Math.abs(age_dt.getUTCFullYear() - 1970);
 }
 
-$(document).ready(function () {
+$(document).ready(() => {
 	let idGuionista = $('span.invisible').attr('id');
 
-	$.getJSON("datosGuionista.php?idGuionista=" + idGuionista, function (data) {
+	$.getJSON("datosGuionista.php?idGuionista=" + idGuionista, data => {
 
 		let aux = "";
 
@@ -65,7 +65,7 @@ $(document).ready(function () {
 		$('#datos').html(aux);
 	});
 
-	$.getJSON("comicsGuionista.php?idGuionista=" + idGuionista, function (data) {
+	$.getJSON("comicsGuionista.php?idGuionista=" + idGuionista, data => {
 		let cont = 0;
 		let aux = "";
 
@@ -96,15 +96,15 @@ $(document).ready(function () {
 	});
 });
 
-function votaKarmaGuionista(idGuionista, karma) {
-	let idGuionista = idGuionista;
-	let karma = karma;
-
+let votaKarmaGuionista = (idGuionista, karma) => {
 	$.ajax({
 		type: "POST",
 		url: "../php/votarKarmaGuionista.php",
-		data: { idGuionista: idGuionista, karma: karma },
-		success: function (data) {
+		data: {
+			idGuionista: idGuionista,
+			karma: karma
+		},
+		success: data => {
 			$(".votakarma").prop("disabled", true);
 			$("#feedbackKarmaGuionista").removeClass("none");
 			$("#feedbackKarmaGuionista").addClass("block");

@@ -1,7 +1,7 @@
-$(document).ready(function () {
+$(document).ready(() => {
 	let idEditorial = $('span.invisible').attr('id');
 
-	$.getJSON("datosEditorial.php?idEditorial=" + idEditorial, function (data) {
+	$.getJSON("datosEditorial.php?idEditorial=" + idEditorial, data => {
 		let aux = "";
 
 		aux += "<div class='row'>"
@@ -39,10 +39,9 @@ $(document).ready(function () {
 		$('#datos').html(aux);
 	});
 
-	$.getJSON("comicsEditorial.php?idEditorial=" + idEditorial, function (data) {
+	$.getJSON("comicsEditorial.php?idEditorial=" + idEditorial, data => {
 		let cont = 0;
 		let aux2 = "";
-		let contTotal = 0;
 
 		aux2 += "<div class='row'>";//inicio div fila
 
@@ -64,7 +63,6 @@ $(document).ready(function () {
 			aux2 += "</div>"; //cierra div card
 			//aux += "</div>"; //cierra div columna
 			cont++;
-			contTotal++;
 		}
 		aux2 += "</div>"; //cierra div fila
 
@@ -72,15 +70,15 @@ $(document).ready(function () {
 	});
 });
 
-function votaKarmaEditorial(idEditorial, karma) {
-	let idEditorial = idEditorial;
-	let karma = karma;
-
+let votaKarmaEditorial = (idEditorial, karma) => {
 	$.ajax({
 		type: "POST",
 		url: "../php/votarKarmaEditorial.php",
-		data: { idEditorial: idEditorial, karma: karma },
-		success: function (data) {
+		data: {
+			idEditorial: idEditorial,
+			karma: karma
+		},
+		success: data => {
 			$(".votakarma").prop("disabled", true);
 			$("#feedbackKarmaEditorial").removeClass("none");
 			$("#feedbackKarmaEditorial").addClass("block");

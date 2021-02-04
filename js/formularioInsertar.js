@@ -1,11 +1,11 @@
-$(document).ready(function () {
-	$('.custom-file-input').on('change', function () {
+$(document).ready(() => {
+	$('.custom-file-input').on('change', () => {
 		let fileName = $(this).val().split('\\').pop();
 		$(this).next('.custom-file-label').addClass("selected").html(fileName);
 		$(this).next('.custom-file-label').addClass("texto-blanco").html(fileName);
 	});
 
-	$(document).on("change", "input[type=radio]", function () {
+	$(document).on("change", "input[type=radio]", () => {
 		switch ($(this).attr("id")) {
 			case "editorial":
 				cambiaFormulario("editorial");
@@ -22,7 +22,7 @@ $(document).ready(function () {
 		}
 	});
 
-	function cambiaFormulario(form) {
+	let cambiaFormulario = form => {
 		let aux = "form" + form;
 		let a = document.getElementsByClassName('formulario');
 
@@ -35,7 +35,7 @@ $(document).ready(function () {
 		document.getElementById(aux).classList.add('block');
 	}
 
-	$.getJSON("buscaEditoriales.php", function (data) {
+	$.getJSON("buscaEditoriales.php", data => {
 		let auxEditoriales = "";
 
 		auxEditoriales += "<option disabled selected> -- Elige Editorial -- </option>";
@@ -47,7 +47,7 @@ $(document).ready(function () {
 		$('#selectEditorial').html(auxEditoriales);
 	});
 
-	$.getJSON("buscaGuionistas.php", function (data) {
+	$.getJSON("buscaGuionistas.php", data => {
 		let auxGuionistas = "";
 
 		auxGuionistas += "<option disabled selected> -- Elige Guionista -- </option>";
@@ -59,7 +59,7 @@ $(document).ready(function () {
 		$('#selectGuionista').html(auxGuionistas);
 	});
 
-	$.getJSON("buscaIlustradores.php", function (data) {
+	$.getJSON("buscaIlustradores.php", data => {
 		let auxIlustradores = "";
 
 		auxIlustradores += "<option disabled selected> -- Elige Ilustrador -- </option>";

@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(() => {
 	// Carga por defecto los Leyendo
 	mostrarComicsEstado();
 
@@ -12,7 +12,7 @@ $(document).ready(function () {
 	document.getElementById('Pendiente').addEventListener('click', mostrarComicsEstado, false);
 });
 
-function marcaActivo(elem) {
+let marcaActivo = elem => {
 	let a = document.getElementsByClassName('nav-link');
 
 	for (i = 0; i < a.length; i++) {
@@ -28,7 +28,7 @@ function marcaActivo(elem) {
 	$('span.invisible').attr('id', nuevoId);
 }
 
-function mostrarComicsEstado() {
+let mostrarComicsEstado = () => {
 	//let estado = this.id;
 	let estado = $('span.invisible').attr('id');
 
@@ -36,8 +36,7 @@ function mostrarComicsEstado() {
 		estado = "Leyendo";
 	}
 
-	$.getJSON("mostrarComicsUsuario.php?estado=" + estado, function (data) {
-
+	$.getJSON("mostrarComicsUsuario.php?estado=" + estado, data => {
 		let cont = 0;
 		let aux = "";
 		let contTotal = 0;

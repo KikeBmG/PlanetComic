@@ -1,5 +1,5 @@
-function modalDatosComic(idComic) {
-	$.getJSON("mostrarComic.php?idComic=" + idComic, function (data) {
+let modalDatosComic = idComic => {
+	$.getJSON("mostrarComic.php?idComic=" + idComic, data => {
 
 		let aux = "";
 
@@ -99,7 +99,7 @@ function modalDatosComic(idComic) {
 		$('#modal').html(aux);
 		$("#myModal").modal();
 
-		$('#myModal').on('hidden.bs.modal', function (e) {
+		$('#myModal').on('hidden.bs.modal', e => {
 			$(this).remove();
 		});
 
@@ -123,7 +123,7 @@ function modalDatosComic(idComic) {
 			$("#mediaGlobal").addClass('btn-danger');
 		}
 
-		$.getJSON("compruebaEstado.php?idComic=" + idComic, function (dato) {
+		$.getJSON("compruebaEstado.php?idComic=" + idComic, dato => {
 			if (dato.length > 0) {
 				switch (dato[0].estado) {
 					case "Leido":
@@ -162,15 +162,15 @@ function modalDatosComic(idComic) {
 	});
 }
 
-function votaKarmaComic(idComic, karma) {
-	let idComic = idComic;
-	let karma = karma;
-
+let votaKarmaComic = (idComic, karma) => {
 	$.ajax({
 		type: "POST",
 		url: "../php/votarKarmaComic.php",
-		data: { idComic: idComic, karma: karma },
-		success: function (data) {
+		data: {
+			idComic: idComic,
+			karma: karma
+		},
+		success: data => {
 			$(".votakarma").prop("disabled", true);
 			$("#feedbackKarmaComic").removeClass("none");
 			$("#feedbackKarmaComic").addClass("block");
@@ -178,9 +178,7 @@ function votaKarmaComic(idComic, karma) {
 	});
 }
 
-function cambiaEstado(vEstado, idComic) {
-	let idComic = idComic;
-
+let cambiaEstado = (vEstado, idComic) => {
 	switch (vEstado) {
 		case 1:
 			vEstado = "Leido";
@@ -196,9 +194,11 @@ function cambiaEstado(vEstado, idComic) {
 	$.ajax({
 		type: "POST",
 		url: "../php/insertarBiblioteca.php",
-		data: { idComic: idComic, estado: vEstado },
-		success: function (data) {
-
+		data: {
+			idComic: idComic,
+			estado: vEstado
+		},
+		success: data => {
 			switch (vEstado) {
 				case "Leido":
 					$("#botonLeyendo").removeClass("btn-warning");
@@ -226,8 +226,8 @@ function cambiaEstado(vEstado, idComic) {
 	});
 }
 
-function muestraComentarios(idComic) {
-	$.getJSON("mostrarComentariosComic.php?idComic=" + idComic, function (data) {
+let muestraComentarios = idComic => {
+	$.getJSON("mostrarComentariosComic.php?idComic=" + idComic, data => {
 		let auxComentarios = "";
 
 		if (data.length == 0) {
@@ -308,28 +308,26 @@ function muestraComentarios(idComic) {
 
 }
 
-function verSpoiler(idComentario) {
-	let idComentarioAux = idComentario;
-
-	if ($('#comentario' + idComentarioAux).hasClass("none") == true) {
-		$('#comentario' + idComentarioAux).removeClass("none");
-		$('#comentario' + idComentarioAux).addClass("block");
+let verSpoiler = idComentario => {
+	if ($('#comentario' + idComentario).hasClass("none") == true) {
+		$('#comentario' + idComentario).removeClass("none");
+		$('#comentario' + idComentario).addClass("block");
 	}
-	else if ($('#comentario' + idComentarioAux).hasClass("block") == true) {
-		$('#comentario' + idComentarioAux).removeClass("block");
-		$('#comentario' + idComentarioAux).addClass("none");
+	else if ($('#comentario' + idComentario).hasClass("block") == true) {
+		$('#comentario' + idComentario).removeClass("block");
+		$('#comentario' + idComentario).addClass("none");
 	}
 }
 
-function votaKarmaComentario(idComentario, spoiler) {
-	let idComentario = idComentario;
-	let spoiler = spoiler;
-
+let votaKarmaComentario = (idComentario, spoiler) => {
 	$.ajax({
 		type: "POST",
 		url: "../php/votarKarmaComentario.php",
-		data: { idComentario: idComentario, spoiler: spoiler },
-		success: function (data) {
+		data: {
+			idComentario: idComentario,
+			spoiler: spoiler
+		},
+		success: data => {
 			$('.votakarmaComentario' + idComentario).prop("disabled", true);
 			$('#feedbackKarmaComentario' + idComentario).removeClass("none");
 			$('#feedbackKarmaComentario' + idComentario).addClass("block");
@@ -337,15 +335,18 @@ function votaKarmaComentario(idComentario, spoiler) {
 	});
 }
 
-function enviarVotacion(idComic) {
+let enviarVotacion = idComic => {
 	let voto = ($("#estrellas").val()) * 2;
 
 	if (voto !== null) {
 		$.ajax({
 			type: "POST",
 			url: "../php/insertarPuntuacion.php",
-			data: { idComic: idComic, puntuacion: voto },
-			success: function (data) {
+			data: {
+				idComic: idComic,
+				puntuacion: voto
+			},
+			success: data => {
 				$('#botonEnviarVotacion').addClass("disabled");
 			}
 		});
