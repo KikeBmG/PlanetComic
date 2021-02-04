@@ -23,51 +23,48 @@ $(document).ready(() => {
 	});
 
 	let cambiaFormulario = form => {
-		let aux = 'form' + form;
-		let a = document.getElementsByClassName('formulario');
+		let formSelector = $(`#form${form}`);
+		let formAll = $('.formulario');
 
-		for (i = 0; i < a.length; i++) {
-			a[i].classList.remove('block')
-			a[i].classList.add('none')
+		for (let i = 0; i < formAll.length; i++) {
+			formAll[i].classList.remove('block')
+			formAll[i].classList.add('none')
 		}
 
-		document.getElementById(aux).classList.remove('none');
-		document.getElementById(aux).classList.add('block');
+		formSelector.classList.remove('none');
+		formSelector.classList.add('block');
 	}
 
 	$.getJSON('buscaEditoriales.php', data => {
-		let auxEditoriales = '';
-
-		auxEditoriales += `<option disabled selected> -- Elige Editorial -- </option>`;
-
-		for (i = 0; i < data.length; i++) {
-			auxEditoriales += `<option value="${data[i].idEditorial}">${data[i].nombreEditorial}</option>`;
-		}
-
-		$('#selectEditorial').html(auxEditoriales);
+		$('#selectEditorial').html(generateOptions(data, 'editorial'));
 	});
 
 	$.getJSON('buscaGuionistas.php', data => {
-		let auxGuionistas = '';
-
-		auxGuionistas += `<option disabled selected> -- Elige Guionista -- </option>`;
-
-		for (i = 0; i < data.length; i++) {
-			auxGuionistas += `<option value="${data[i].idGuionista}">${data[i].nombreGuionista}</option>`;
-		}
-
-		$('#selectGuionista').html(auxGuionistas);
+		$('#selectGuionista').html(generateOptions(data, 'guionista'));
 	});
 
 	$.getJSON('buscaIlustradores.php', data => {
-		let auxIlustradores = '';
-
-		auxIlustradores += `<option disabled selected> -- Elige Ilustrador -- </option>`;
-
-		for (i = 0; i < data.length; i++) {
-			auxIlustradores += `<option value="${data[i].idIlustrador}">${data[i].nombreIlustrador}</option>`;
-		}
-
-		$('#selectIlustrador').html(auxIlustradores);
+		$('#selectIlustrador').html(generateOptions(data, 'ilustrador'));
 	});
 });
+
+let generateOptions = (data, type) => {
+	let response = '';
+
+	response += `<option disabled selected> -- Elige Guionista -- </option>`;
+
+	for (let i = 0; i < data.length; i++) {
+		switch (type) {
+			case 'editorial':
+				auxEditoriales += `<option value="${data[i].idEditorial}">${data[i].nombreEditorial}</option>`;
+				break;
+			case 'guionista':
+				response += `<option value="${data[i].idGuionista}">${data[i].nombreGuionista}</option>`;
+				break;
+			case 'ilustrador':
+				auxIlustradores += `<option value="${data[i].idIlustrador}">${data[i].nombreIlustrador}</option>`;
+				break;
+		}
+	}
+	return response;
+}
