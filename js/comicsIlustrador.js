@@ -19,7 +19,7 @@ $(document).ready(() => {
 
 		aux += `<div class="col-sm-3">`; //abre columna foto
 
-		aux += `<img src="../img/ilustradores/${data[0].fotoIlustrador}" width="240px" height="285px">`;
+		aux += `<img src="../resources/img/ilustradores/${data[0].fotoIlustrador}" width="240px" height="285px">`;
 
 		aux += `</div>`; //cierra columna foto
 
@@ -47,9 +47,9 @@ $(document).ready(() => {
 
 		aux += `<div class="row">`; //abre fila karma
 
-		aux += `<button class="btn btn-success my-2 my-sm-0 margen-derecho-1 votakarma" onClick="${votaKarmaIlustrador(idIlustrador, (+1))}"><img src="../img/iconos/glyphicons-344-thumbs-up.png" height="16px" alt="positivo"></button>`;
+		aux += `<button class="btn btn-success my-2 my-sm-0 margen-derecho-1 votakarma" onClick="${votaKarmaIlustrador(idIlustrador, (+1))}"><img src="../resources/img/iconos/glyphicons-344-thumbs-up.png" height="16px" alt="positivo"></button>`;
 
-		aux += `<button class="btn btn-danger my-2 my-sm-0 votakarma" onClick="${votaKarmaIlustrador(idIlustrador, (-1))}"><img src="../img/iconos/glyphicons-345-thumbs-down.png" height="16px" alt="negativo"></button>`;
+		aux += `<button class="btn btn-danger my-2 my-sm-0 votakarma" onClick="${votaKarmaIlustrador(idIlustrador, (-1))}"><img src="../resources/img/iconos/glyphicons-345-thumbs-down.png" height="16px" alt="negativo"></button>`;
 
 		aux += `<span class="none texto-blanco margen-izquierdo-3" id="feedbackKarmaIlustrador">¡Gracias por votar!</span>`;
 
@@ -79,7 +79,7 @@ $(document).ready(() => {
 			//aux += `<div class="col-sm-4">`; //dentro del div contenedor del item inicio un div columna
 			aux += `<div class="card bg-dark text-white" style="width: 20rem;">`; //dentro del div columna inicio un div card
 
-			aux += `<img src="../img/portadas/${data[i].portada}" class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
+			aux += `<img src="../resources/img/portadas/${data[i].portada}" class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
 			aux += `<div class="card-block">`; // abre card-block
 			aux += `<h4 class="card-title">${data[i].nombreComic}</h4>`;
 			aux += `<a class="btn btn-primary align-items-end" href="#myModal" onClick="${modalDatosComic(data[i].idComic)}" data-toggle="modal" data-target=".bd-example-modal-lg">Ver detalles</a>`;

@@ -35,7 +35,7 @@
 		<div class="navbar-brand">
 			<form class="form-inline my-2 my-lg-0" action="buscador.php" method="post">
 				<input class="form-control mr-sm-2 buscador" type="text" placeholder="Buscar" id="nombre" name="nombre">
-				<button class="btn btn-primary my-2 my-sm-0" type="submit"><img src="../img/iconos/glyphicons-28-search.png" height="16px" alt="Buscar"></button>
+				<button class="btn btn-primary my-2 my-sm-0" type="submit"><img src="../../resources/img/iconos/glyphicons-28-search.png" height="16px" alt="Buscar"></button>
 			</form>
 		</div>
 		<h5><a class="navbar-brand" href="main.php">Planet Comic</a></h5>
