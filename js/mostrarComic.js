@@ -19,7 +19,7 @@ let modalDatosComic = idComic => {
 
 		aux += `<ul class="nav nav-tabs" role="tablist">`; //abre Nav tabs
 		aux += `<li role="presentation" class="nav-item active"><a href="#datosTab" aria-controls="datosTab" role="tab" data-toggle="tab" class="nav-link botonesTab active">Datos</a></li>`;
-		aux += `<li role="presentation" class="nav-item"><a href="#comentariosTab" aria-controls="comentariosTab" role="tab" data-toggle="tab" class="nav-link botonesTab" onclick="${muestraComentarios(idComic)}">Comentarios</a></li>`;
+		aux += `<li role="presentation" class="nav-item"><a href="#comentariosTab" aria-controls="comentariosTab" role="tab" data-toggle="tab" class="nav-link botonesTab" onClick="${muestraComentarios(idComic)}">Comentarios</a></li>`;
 		aux += `</ul>`; //cierra Nav tabs
 
 		aux += `<div class="tab-content">`; //abre tab-content
@@ -30,7 +30,7 @@ let modalDatosComic = idComic => {
 		aux += `<div class="row">`; //abre fila 1
 		aux += `<div class="col-md-3">`; //abre columna 1
 
-		aux += `<img src="../img/portadas/${data[0].portada}" height="300px" width="200px">`; //imagen dentro del div item
+		aux += `<img src="../resources/img/portadas/${data[0].portada}" height="300px" width="200px">`; //imagen dentro del div item
 
 		aux += `<div class="botones-modal">`; //abre div botones
 
@@ -39,16 +39,16 @@ let modalDatosComic = idComic => {
 
 		aux += `<form>`; //abre formulario estrellas
 		aux += `<input id="estrellas" name="puntuacion" type="text" class="rating" data-min=0 data-max=5 data-step=0.5 data-size="xs" required>`;
-		aux += `<button type="submit" class="btn btn-sample botonEstadoComic menos-margen-inf" id="botonEnviarVotacion" onclick="${enviarVotacion(idComic)}">Votar</button>`;
+		aux += `<button type="submit" class="btn btn-sample botonEstadoComic menos-margen-inf" id="botonEnviarVotacion" onClick="${enviarVotacion(idComic)}">Votar</button>`;
 		aux += `</form>`; //cierra formulario estrellas
 
-		aux += `<p><button type="button" id="botonLeido" class="btn btn-primary botonEstadoComic" onclick="${cambiaEstado(1, idComic)}" value="Leido">Leido</button></p>`; // boton Leido
-		aux += `<p><button type="button" id="botonLeyendo" class="btn btn-primary botonEstadoComic" onclick="${cambiaEstado(2, idComic)}" value="Leyendo">Leyendo</button></p>`; // boton Leyendo
-		aux += `<p><button type="button" id="botonPendiente" class="btn btn-primary botonEstadoComic" onclick="${cambiaEstado(3, idComic)}" value="Leyendo">Pendiente</button></p>`; // boton Pendiente
+		aux += `<p><button type="button" id="botonLeido" class="btn btn-primary botonEstadoComic" onClick="${cambiaEstado(1, idComic)}" value="Leido">Leido</button></p>`; // boton Leido
+		aux += `<p><button type="button" id="botonLeyendo" class="btn btn-primary botonEstadoComic" onClick="${cambiaEstado(2, idComic)}" value="Leyendo">Leyendo</button></p>`; // boton Leyendo
+		aux += `<p><button type="button" id="botonPendiente" class="btn btn-primary botonEstadoComic" onClick="${cambiaEstado(3, idComic)}" value="Leyendo">Pendiente</button></p>`; // boton Pendiente
 
-		aux += `<p class="margen-izquierdo-3"><button class="btn btn-success my-2 my-sm-0 margen-derecho-1 votakarma" onclick="${votaKarmaComic(idComic, (+1))}"><img src="../img/iconos/glyphicons-344-thumbs-up.png" height="16px" alt="positivo"></button>`; // boton karma positivo
+		aux += `<p class="margen-izquierdo-3"><button class="btn btn-success my-2 my-sm-0 margen-derecho-1 votakarma" onClick="${votaKarmaComic(idComic, (+1))}"><img src="../resources/img/iconos/glyphicons-344-thumbs-up.png" height="16px" alt="positivo"></button>`; // boton karma positivo
 
-		aux += `<button class="btn btn-danger my-2 my-sm-0 votakarma" onclick="${votaKarmaComic(idComic, (-1))}"><img src="../img/iconos/glyphicons-345-thumbs-down.png" height="16px" alt="negativo"></button></p>`; // boton karma negativo
+		aux += `<button class="btn btn-danger my-2 my-sm-0 votakarma" onClick="${votaKarmaComic(idComic, (-1))}"><img src="../resources/img/iconos/glyphicons-345-thumbs-down.png" height="16px" alt="negativo"></button></p>`; // boton karma negativo
 
 		aux += `<small class="none" id="feedbackKarmaComic">¡Gracias por votar!</small>`;
 
@@ -262,15 +262,15 @@ let muestraComentarios = idComic => {
 				auxComentarios += `<div class="card-footer text-muted">`; //abre card-footer
 				auxComentarios += `<ul class="list-inline margin-bottom-0">`; //abre row footer
 
-				auxComentarios += `<button class="btn btn-success my-2 my-sm-0 margen-derecho-1 votakarmaComentario${data[i].idComentario}" onclick="${votaKarmaComentario(data[i].idComentario, (+1))}"><img src="../img/iconos/glyphicons-344-thumbs-up.png" height="8px" alt="positivo"></button>`; // boton karma positivo
+				auxComentarios += `<button class="btn btn-success my-2 my-sm-0 margen-derecho-1 votakarmaComentario${data[i].idComentario}" onClick="${votaKarmaComentario(data[i].idComentario, (+1))}"><img src="../resources/img/iconos/glyphicons-344-thumbs-up.png" height="8px" alt="positivo"></button>`; // boton karma positivo
 
-				auxComentarios += `<button class="btn btn-danger my-2 my-sm-0 margen-derecho-1 votakarmaComentario${data[i].idComentario}" onclick="${votaKarmaComentario(data[i].idComentario, (-1))}"><img src="../img/iconos/glyphicons-345-thumbs-down.png" height="8px" alt="negativo"></button>`; // boton karma negativo
+				auxComentarios += `<button class="btn btn-danger my-2 my-sm-0 margen-derecho-1 votakarmaComentario${data[i].idComentario}" onClick="${votaKarmaComentario(data[i].idComentario, (-1))}"><img src="../resources/img/iconos/glyphicons-345-thumbs-down.png" height="8px" alt="negativo"></button>`; // boton karma negativo
 
 				auxComentarios += `<li class="list-inline-item">${data[i].votos} votos</li>`;
 				auxComentarios += `<li class="list-inline-item">${data[i].fechaComentario}</li>`;
 
 				if (data[i].spoiler < 0) {
-					auxComentarios += `<li class="list-inline-item"><button class=" btn btn-warning" onclick="${verSpoiler(data[i].idComentario)}">Ver spoiler</button></li>`;
+					auxComentarios += `<li class="list-inline-item"><button class=" btn btn-warning" onClick="${verSpoiler(data[i].idComentario)}">Ver spoiler</button></li>`;
 				}
 
 				auxComentarios += `</ul>`; //cierra row footer

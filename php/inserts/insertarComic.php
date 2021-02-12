@@ -13,8 +13,8 @@
 	
 	
 	$nombrePortada = strtolower($portada);
-	$ruta = "../img/portadas/" . $_FILES['portada']['name'];
-	$destino = "../img/portadas/".$nombrePortada;
+	$ruta = "../../resources/img/portadas/" . $_FILES['portada']['name'];
+	$destino = "../../resources/img/portadas/".$nombrePortada;
 	
 	$resultado = @move_uploaded_file($_FILES["portada"]["tmp_name"], $ruta);
 	

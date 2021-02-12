@@ -51,7 +51,7 @@ let mostrarComicsEstado = () => {
 
 			aux += `<div class="card bg-dark text-white" style="width: 20rem;">`; //dentro del div columna inicio un div card
 
-			aux += `<img src="../img/portadas/${data[i].portada}" class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
+			aux += `<img src="../resources/img/portadas/${data[i].portada}" class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
 			aux += `<div class="card-block">`; // abre card-block
 			aux += `<h4 class="card-title">${data[i].nombreComic}</h4>`;
 			aux += `<a class="btn btn-primary align-items-end" href="#myModal" onClick="${modalDatosComic(data[i].idComic)}" data-toggle="modal" data-target=".bd-example-modal-lg">Ver detalles</a>`;

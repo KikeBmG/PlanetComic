@@ -8,7 +8,7 @@ $(document).ready(() => {
 
 		aux += `<div class="col-sm-3">`;
 
-		aux += `<img src="../img/logos/${data[0].logo}" width="240px" height="285px">`;
+		aux += `<img src="../resources/img/logos/${data[0].logo}" width="240px" height="285px">`;
 
 		aux += `</div>`;
 
@@ -22,9 +22,9 @@ $(document).ready(() => {
 
 		aux += `<div class="row">`;
 
-		aux += `<button class="btn btn-success my-2 my-sm-0 margen-derecho-1 votakarma" onclick="${votaKarmaEditorial(idEditorial, (+1))}"><img src="../img/iconos/glyphicons-344-thumbs-up.png" height="16px" alt="positivo"></button>`;
+		aux += `<button class="btn btn-success my-2 my-sm-0 margen-derecho-1 votakarma" onClick="${votaKarmaEditorial(idEditorial, (+1))}"><img src="../resources/img/iconos/glyphicons-344-thumbs-up.png" height="16px" alt="positivo"></button>`;
 
-		aux += `<button class="btn btn-danger my-2 my-sm-0 votakarma" onclick="${votaKarmaEditorial(idEditorial, (-1))}"><img src="../img/iconos/glyphicons-345-thumbs-down.png" height="16px" alt="negativo"></button>`;
+		aux += `<button class="btn btn-danger my-2 my-sm-0 votakarma" onClick="${votaKarmaEditorial(idEditorial, (-1))}"><img src="../resources/img/iconos/glyphicons-345-thumbs-down.png" height="16px" alt="negativo"></button>`;
 
 		aux += `</div>`;
 
@@ -54,7 +54,7 @@ $(document).ready(() => {
 
 			aux2 += `<div class="card bg-dark text-white" style="width: 20rem;">`; //dentro del div columna inicio un div card
 
-			aux2 += `<img src="../img/portadas/${data[i].portada}' class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
+			aux2 += `<img src="../resources/img/portadas/${data[i].portada}' class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
 			aux2 += `<div class="card-block">`; // abre card-block
 			aux2 += `<h4 class="card-title">${data[i].nombreComic}</h4>`;
 			aux2 += `<a class="btn btn-primary align-items-end" href="#myModal" onClick="${modalDatosComic(data[i].idComic)}" data-toggle="modal" data-target=".bd-example-modal-lg">Ver detalles</a>`;

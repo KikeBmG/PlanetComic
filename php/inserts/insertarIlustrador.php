@@ -8,8 +8,8 @@
 	$fechaNacIlustrador = $_POST['fechaNacIlustrador'];
 	
 	$nombreFotoIlustrador = strtolower($fotoIlustrador);
-	$ruta = "../img/ilustradores/" . $_FILES['fotoIlustrador']['name'];
-	$destino = "../img/ilustradores/".$nombreFotoIlustrador;
+	$ruta = "../../resources/img/ilustradores/" . $_FILES['fotoIlustrador']['name'];
+	$destino = "../../resources/img/ilustradores/".$nombreFotoIlustrador;
 	
 	$resultado = @move_uploaded_file($_FILES["fotoIlustrador"]["tmp_name"], $ruta);
 	

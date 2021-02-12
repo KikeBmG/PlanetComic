@@ -19,16 +19,16 @@ $(document).ready(() => {
 
 			switch (data[i].tipo) {
 				case 'guionista':
-					aux += `<img src="../img/guionistas/${data[i].foto}" class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
+					aux += `<img src="../resources/img/guionistas/${data[i].foto}" class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
 					break;
 				case 'ilustrador':
-					aux += `<img src="../img/ilustradores/${data[i].foto}" class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
+					aux += `<img src="../resources/img/ilustradores/${data[i].foto}" class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
 					break;
 				case 'editorial':
-					aux += `<img src="../img/logos/${data[i].foto}" class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
+					aux += `<img src="../resources/img/logos/${data[i].foto}" class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
 					break;
 				case 'comic':
-					aux += `<img src="../img/portadas/${data[i].foto}" class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
+					aux += `<img src="../resources/img/portadas/${data[i].foto}" class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
 					break;
 			}
 

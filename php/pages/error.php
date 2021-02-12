@@ -1,8 +1,7 @@
 <?php
-	
-	include('functions.php');
-	
-	$idGuionista = $_GET['idGuionista'];
+	include('../connection.php');
+
+	$nombre = isset($_REQUEST['nombre']) ?  $_REQUEST['nombre'] : '';
 ?>
 
 <!DOCTYPE html>
@@ -11,21 +10,20 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
-	<title>Guionista</title>
+	<title>¡Éxito!</title>
 	<!--	CSS		-->
-	<link rel="stylesheet" href="../css/bootstrap.css" type="text/css">
-	<link rel="stylesheet" href="../css/main.css" type="text/css">
-	<link href="../css/star-rating.min.css" media="all" rel="stylesheet" type="text/css"/>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<link rel="stylesheet" href="../../css/main.css" type="text/css">
+	<link href="../../resources/plugins/star-rating/css/main.css" media="all" rel="stylesheet" type="text/css"/>
 	<!--	JavaScripts Bootstrap y jQuery		-->
-	<script src="../js/jquery-3.3.1.min.js" type="text/javascript"></script>
-	<script src="../js/popper.min.js" type="text/javascript"></script>
-	<script src="../js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
 	<!--	JavaScripts propios y Plugin estrella		-->
-	<script src="../js/star-rating.js" type="text/javascript"></script>
-	<script src="../js/mostrarComic.js" type="text/javascript"></script>
-	<script src="../js/comicsGuionista.js" type="text/javascript"></script>
+	<script src="../../js/star-rating.js" type="text/javascript"></script>
+	<script src="../../js/mostrarComic.js" type="text/javascript"></script>
 	<!--	Textos y traducciones de las estrellas		-->
-	<script src="../js/locales/es.js" type="text/javascript"></script>
+	<script src="../../resources/plugins/star-rating/locales/es.js" type="text/javascript"></script>
 </head>
 <body>
 	<!--  Barra de Navegación	-->
@@ -36,7 +34,7 @@
 		<div class="navbar-brand">
 			<form class="form-inline my-2 my-lg-0" action="buscador.php" method="post">
 				<input class="form-control mr-sm-2 buscador" type="text" placeholder="Buscar" id="nombre" name="nombre">
-				<button class="btn btn-primary my-2 my-sm-0" type="submit"><img src="../img/iconos/glyphicons-28-search.png" height="16px" alt="Buscar"></button>
+				<button class="btn btn-primary my-2 my-sm-0" type="submit"><img src="../../resources/img/iconos/glyphicons-28-search.png" height="16px" alt="Buscar"></button>
 			</form>
 		</div>
 		<h5><a class="navbar-brand" href="main.php">Planet Comic</a></h5>
@@ -61,18 +59,15 @@
 	</nav>
 	<!--  Contenido  -->
 	<div class="container" id="container">
+		<h3 id="contador" class="col-lg-11"></h3>
 		<div class="row menos-margen-inf">
 			<div class="col-sm-12">
-				<div id="datos"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-12">
-				<div id="comics" class="card-deck"></div>
+				<h3 class="texto-blanco center">No se ha podido añadir, <a href="formularioInsertar.php">inténtelo de nuevo.</a></h3>
+				<div class="error">
+					<img src='../resources/img/iconos/abajo.png' height='128px' alt='positivo'>
+				</div>
 			</div>
 		</div>
 	</div>
-	<div id="modal"></div>
-	<span class="invisible" id="<?php echo $idGuionista; ?>"></span>
 </body>
 </html>

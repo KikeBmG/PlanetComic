@@ -6,8 +6,8 @@
 	$logo = $_FILES['logo']['name'];
 	
 	$nombreLogo = strtolower($logo);
-	$ruta = "../img/logos/" . $_FILES['logo']['name'];
-	$destino = "../img/logos/".$nombreLogo;
+	$ruta = "../../resources/img/logos/" . $_FILES['logo']['name'];
+	$destino = "../../resources/img/logos/".$nombreLogo;
 	
 	$resultado = @move_uploaded_file($_FILES["logo"]["tmp_name"], $ruta);
 	

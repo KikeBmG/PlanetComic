@@ -151,7 +151,7 @@ img {
 }
 
 .stars-outer::before {
-	content: url('../img/iconos/glyphicons-49-star-empty.png') url('../img/iconos/glyphicons-49-star-empty.png') url('../img/iconos/glyphicons-49-star-empty.png') url('../img/iconos/glyphicons-49-star-empty.png') url('../img/iconos/glyphicons-49-star-empty.png');
+	content: url('../resources/img/iconos/glyphicons-49-star-empty.png') url('../resources/img/iconos/glyphicons-49-star-empty.png') url('../resources/img/iconos/glyphicons-49-star-empty.png') url('../resources/img/iconos/glyphicons-49-star-empty.png') url('../resources/img/iconos/glyphicons-49-star-empty.png');
 }
  
 .stars-inner {
@@ -164,7 +164,7 @@ img {
 }
  
 .stars-inner::before {
-	content:  url('../img/iconos/glyphicons-50-star.png') url('../img/iconos/glyphicons-50-star.png') url('../img/iconos/glyphicons-50-star.png') url('../img/iconos/glyphicons-50-star.png') url('../img/iconos/glyphicons-50-star.png');
+	content:  url('../resources/img/iconos/glyphicons-50-star.png') url('../resources/img/iconos/glyphicons-50-star.png') url('../resources/img/iconos/glyphicons-50-star.png') url('../resources/img/iconos/glyphicons-50-star.png') url('../resources/img/iconos/glyphicons-50-star.png');
 	color: #f8ce0b;
 }
 
