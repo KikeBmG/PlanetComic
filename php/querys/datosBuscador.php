@@ -1,6 +1,6 @@
 <?php
 	
-	include('functions.php');
+	include('../connection.php');
 	
 	$nombre = $_GET['nombre'];
 	

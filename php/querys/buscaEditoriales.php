@@ -1,5 +1,5 @@
 <?php
-	include('functions.php');
+	include('../connection.php');
 	
 	$sql = "SELECT idEditorial, nombreEditorial FROM editorial ";
 	$vector = conexion($sql);

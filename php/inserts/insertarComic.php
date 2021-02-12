@@ -1,6 +1,6 @@
 <?php
 	
-	include('functions.php');
+	include('../connection.php');
 	
 	$nombreComic = $_POST['nombreComic'];
 	$sinopsis = $_POST['sinopsis'];

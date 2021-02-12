@@ -6,7 +6,7 @@
 		exit();
 	}
 	
-	include('functions.php');
+	include('../connection.php');
 	
 	$id_comic = $_GET['idComic'];
 	$id_usuario = $_COOKIE['idUsuario'];

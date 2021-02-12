@@ -6,7 +6,7 @@
 		exit();
 	}
 	
-	include('functions.php');
+	include('../connection.php');
 	
 	$id_usuario = $_SESSION['idUsuario'];
 	$id_comic = $_REQUEST['idComic'];

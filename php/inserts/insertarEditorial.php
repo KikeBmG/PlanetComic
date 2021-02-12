@@ -1,6 +1,6 @@
 <?php
 	
-	include('functions.php');
+	include('../connection.php');
 	
 	$nombreEditorial = $_POST['nombreEditorial'];
 	$logo = $_FILES['logo']['name'];

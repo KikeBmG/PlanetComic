@@ -1,6 +1,6 @@
 <?php
 	
-	include('functions.php');
+	include('../connection.php');
 	
 	$id_Editorial = $_REQUEST['idEditorial'];
 	$karma = $_REQUEST['karma'];

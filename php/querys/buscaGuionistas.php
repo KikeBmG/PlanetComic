@@ -1,6 +1,6 @@
 <?php
 	
-	include('functions.php');
+	include('../connection.php');
 	
 	$sql = "SELECT idGuionista, nombreGuionista FROM guionista ";
 	$vector = conexion($sql);

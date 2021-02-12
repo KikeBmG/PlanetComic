@@ -1,6 +1,6 @@
 <?php
 	
-	include('functions.php');
+	include('../connection.php');
 	
 	$nombreGuionista = $_POST['nombreGuionista'];
 	$nacionalidadGuionista = $_POST['nacionalidadGuionista'];

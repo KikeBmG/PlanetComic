@@ -1,6 +1,6 @@
 <?php
 	
-	include('functions.php');
+	include('../connection.php');
 	session_start();
 	
 	$usuarioR = $_POST['usuarioR'];

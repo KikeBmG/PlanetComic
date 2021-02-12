@@ -1,6 +1,6 @@
 <?php
 	
-	include('functions.php');
+	include('../connection.php');
 	
 	$id_Comic = $_GET['idComic'];
 	$id_usuario = $_COOKIE['idUsuario'];
