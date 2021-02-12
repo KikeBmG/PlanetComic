@@ -1,5 +1,4 @@
 <?php
-	
 	include('functions.php');
 	
 	$idEditorial = $_GET['idEditorial'];
