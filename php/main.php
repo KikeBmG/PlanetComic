@@ -1,18 +1,13 @@
 <?php
 	session_start();
-	
+
 	include('functions.php');
 	
 	$idUsuario = $_SESSION['idUsuario'];
 	setcookie('idUsuario',$idUsuario);
 	$nombreUsuario = $_SESSION['nombreUsuario'];
-	
-	if (isset($_GET['estado'])){
-		$estado = $_GET['estado'];
-	}
-	else {
-		$estado = "";
-	}
+
+	$estado = isset($_GET['estado']) ?  $_GET['estado'] : '';
 ?>
 
 <!DOCTYPE html>

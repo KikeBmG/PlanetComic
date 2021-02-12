@@ -22,9 +22,9 @@ $(document).ready(() => {
 
 		aux += `<div class="row">`;
 
-		aux += `<button class="btn btn-success my-2 my-sm-0 margen-derecho-1 votakarma" onclick="${votaKarmaEditorial(idEditorial, (+1))}"><img src="../img/iconos/glyphicons-344-thumbs-up.png" height="16px" alt="positivo"></button>`;
+		aux += `<button class="btn btn-success my-2 my-sm-0 margen-derecho-1 votakarma" onClick="${votaKarmaEditorial(idEditorial, (+1))}"><img src="../img/iconos/glyphicons-344-thumbs-up.png" height="16px" alt="positivo"></button>`;
 
-		aux += `<button class="btn btn-danger my-2 my-sm-0 votakarma" onclick="${votaKarmaEditorial(idEditorial, (-1))}"><img src="../img/iconos/glyphicons-345-thumbs-down.png" height="16px" alt="negativo"></button>`;
+		aux += `<button class="btn btn-danger my-2 my-sm-0 votakarma" onClick="${votaKarmaEditorial(idEditorial, (-1))}"><img src="../img/iconos/glyphicons-345-thumbs-down.png" height="16px" alt="negativo"></button>`;
 
 		aux += `</div>`;
 

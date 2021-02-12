@@ -1,7 +1,6 @@
 <?php
-	
 	include('functions.php');
-	
+
 	$idGuionista = $_GET['idGuionista'];
 ?>
 

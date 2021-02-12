@@ -47,9 +47,9 @@ $(document).ready(() => {
 
 		aux += `<div class="row">`; //abre fila karma
 
-		aux += `<button class="btn btn-success my-2 my-sm-0 margen-derecho-1 votakarma" onclick="${votaKarmaIlustrador(idIlustrador, (+1))}"><img src="../img/iconos/glyphicons-344-thumbs-up.png" height="16px" alt="positivo"></button>`;
+		aux += `<button class="btn btn-success my-2 my-sm-0 margen-derecho-1 votakarma" onClick="${votaKarmaIlustrador(idIlustrador, (+1))}"><img src="../img/iconos/glyphicons-344-thumbs-up.png" height="16px" alt="positivo"></button>`;
 
-		aux += `<button class="btn btn-danger my-2 my-sm-0 votakarma" onclick="${votaKarmaIlustrador(idIlustrador, (-1))}"><img src="../img/iconos/glyphicons-345-thumbs-down.png" height="16px" alt="negativo"></button>`;
+		aux += `<button class="btn btn-danger my-2 my-sm-0 votakarma" onClick="${votaKarmaIlustrador(idIlustrador, (-1))}"><img src="../img/iconos/glyphicons-345-thumbs-down.png" height="16px" alt="negativo"></button>`;
 
 		aux += `<span class="none texto-blanco margen-izquierdo-3" id="feedbackKarmaIlustrador">¡Gracias por votar!</span>`;
 

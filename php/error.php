@@ -1,13 +1,7 @@
 <?php
-	
 	include('functions.php');
-	
-	if (isset($_REQUEST['nombre'])){
-		$nombre = $_REQUEST['nombre'];
-	}
-	else {
-		$nombre = "";
-	}
+
+	$nombre = isset($_REQUEST['nombre']) ?  $_REQUEST['nombre'] : '';
 ?>
 
 <!DOCTYPE html>

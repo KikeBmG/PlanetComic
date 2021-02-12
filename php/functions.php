@@ -1,5 +1,4 @@
 <?php
-	
 	function conexion($sql){
 		$server = "localhost";
 		$BD = "pdaw2t07egomez";
@@ -15,5 +14,4 @@
 		
 		return $arrayCon;
 	}
-	
 ?>
