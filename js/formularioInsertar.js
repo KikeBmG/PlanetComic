@@ -1,3 +1,5 @@
+import { launchQuery } from '../php/connection';
+
 $(document).ready(() => {
 	$('.custom-file-input').on('change', () => {
 		let fileName = $(this).val().split('\\').pop();
@@ -35,17 +37,14 @@ $(document).ready(() => {
 		formSelector.classList.add('block');
 	}
 
-	$.getJSON('buscaEditoriales.php', data => {
-		$('#selectEditorial').html(generateOptions(data, 'editorial'));
-	});
+	let getEditoriales = 'SELECT idEditorial, nombreEditorial FROM editorial';
+	$('#selectEditorial').html(generateOptions(launchQuery(getEditoriales), 'editorial'));
 
-	$.getJSON('buscaGuionistas.php', data => {
-		$('#selectGuionista').html(generateOptions(data, 'guionista'));
-	});
+	let getGuionistas = 'SELECT idGuionista, nombreGuionista FROM guionista';
+	$('#selectGuionista').html(generateOptions(launchQuery(getGuionistas), 'guionista'));
 
-	$.getJSON('buscaIlustradores.php', data => {
-		$('#selectIlustrador').html(generateOptions(data, 'ilustrador'));
-	});
+	let getIlustradores = 'SELECT idIlustrador, nombreIlustrador FROM ilustrador';
+	$('#selectIlustrador').html(generateOptions(launchQuery(getIlustradores), 'ilustrador'));
 });
 
 let generateOptions = (data, type) => {

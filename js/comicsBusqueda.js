@@ -1,76 +1,79 @@
+import { launchQuery } from '../php/connection';
+
 $(document).ready(() => {
 	let nombre = $('span.invisible').attr('id');
 
-	$.getJSON('datosBuscador.php?nombre=' + nombre, data => {
-		let cont = 0;
-		let aux = '';
-		let contTotal = 0;
+	let getDatosBusqueda = `SELECT id, nombre, foto, tipo FROM busqueda WHERE nombre like '%${nombre}%'`;
+	let datosBusqueda = launchQuery(getDatosBusqueda);
 
-		aux += `<div class='row'>`;//inicio div fila
+	let cont = 0;
+	let aux = '';
+	let contTotal = 0;
 
-		for (let i = 0; i < data.length; i++) {
-			if (cont == 3) {
-				aux += `</div>`; // cierra div row
-				aux += `<div class="row">`;//inicio de nuevo div fila
-				cont = 0; //resetea el contador
-			}
+	aux += `<div class='row'>`;//inicio div fila
 
-			aux += `<div class="card bg-dark text-white" style="width: 20rem;">`; //dentro del div columna inicio un div card
-
-			switch (data[i].tipo) {
-				case 'guionista':
-					aux += `<img src="../resources/img/guionistas/${data[i].foto}" class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
-					break;
-				case 'ilustrador':
-					aux += `<img src="../resources/img/ilustradores/${data[i].foto}" class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
-					break;
-				case 'editorial':
-					aux += `<img src="../resources/img/logos/${data[i].foto}" class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
-					break;
-				case 'comic':
-					aux += `<img src="../resources/img/portadas/${data[i].foto}" class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
-					break;
-			}
-
-			aux += `<div class="card-block">`; // abre card-block
-			aux += `<h4 class="card-title">${data[i].nombre}</h4>`;
-
-			switch (data[i].tipo) {
-				case 'guionista':
-					aux += `<a class="btn btn-primary align-items-end" href="../php/guionista.php?idGuionista="${data[i].id}" id="${data[i].id}">Ver detalles</a>`;
-					break;
-				case 'ilustrador':
-					aux += `<a class="btn btn-primary align-items-end" href="../php/ilustrador.php?idIlustrador="${data[i].id}" id="${data[i].id}">Ver detalles</a>`;
-					break;
-				case "editorial":
-					aux += `<a class="btn btn-primary align-items-end" href="../php/editorial.php?idEditorial=${data[i].id}" id="${data[i].id}">Ver detalles</a>`;
-					break;
-				case 'editorial':
-					aux += `<a class="btn btn-primary align-items-end" href="#myModal" onClick="${modalDatosComic(data[i].id)}" data-toggle="modal" data-target=".bd-example-modal-lg">Ver detalles</a>`;
-					break;
-			}
-
-			aux += `</div>`; //cierra div card-block
-			aux += `</div>`; //cierra div card
-
-			cont++;
-			contTotal++;
+	for (let i = 0; i < datosBusqueda.length; i++) {
+		if (cont == 3) {
+			aux += `</div>`; // cierra div row
+			aux += `<div class="row">`;//inicio de nuevo div fila
+			cont = 0; //resetea el contador
 		}
-		aux += `</div>`; //cierra div fila
 
-		$('#contador').html(contTotal + ' resultados');
+		aux += `<div class="card bg-dark text-white" style="width: 20rem;">`; //dentro del div columna inicio un div card
 
-		if (contTotal == 0) {
-			let aux2 = '';
-
-			$('#comics').addClass('btn-insert');
-
-			aux2 = `<a class="btn btn-primary align-items-end" href="../php/formularioInsertar.php">Crear nuevo</a>`;
-
-			$('#comics').html(aux2);
+		switch (datosBusqueda[i].tipo) {
+			case 'guionista':
+				aux += `<img src="../resources/img/guionistas/${datosBusqueda[i].foto}" class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
+				break;
+			case 'ilustrador':
+				aux += `<img src="../resources/img/ilustradores/${datosBusqueda[i].foto}" class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
+				break;
+			case 'editorial':
+				aux += `<img src="../resources/img/logos/${datosBusqueda[i].foto}" class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
+				break;
+			case 'comic':
+				aux += `<img src="../resources/img/portadas/${datosBusqueda[i].foto}" class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
+				break;
 		}
-		else {
-			$('#comics').html(aux);
+
+		aux += `<div class="card-block">`; // abre card-block
+		aux += `<h4 class="card-title">${datosBusqueda[i].nombre}</h4>`;
+
+		switch (datosBusqueda[i].tipo) {
+			case 'guionista':
+				aux += `<a class="btn btn-primary align-items-end" href="../php/guionista.php?idGuionista="${datosBusqueda[i].id}" id="${datosBusqueda[i].id}">Ver detalles</a>`;
+				break;
+			case 'ilustrador':
+				aux += `<a class="btn btn-primary align-items-end" href="../php/ilustrador.php?idIlustrador="${datosBusqueda[i].id}" id="${datosBusqueda[i].id}">Ver detalles</a>`;
+				break;
+			case "editorial":
+				aux += `<a class="btn btn-primary align-items-end" href="../php/editorial.php?idEditorial=${datosBusqueda[i].id}" id="${datosBusqueda[i].id}">Ver detalles</a>`;
+				break;
+			case 'editorial':
+				aux += `<a class="btn btn-primary align-items-end" href="#myModal" onClick="${modalDatosComic(datosBusqueda[i].id)}" data-toggle="modal" data-target=".bd-example-modal-lg">Ver detalles</a>`;
+				break;
 		}
-	});
+
+		aux += `</div>`; //cierra div card-block
+		aux += `</div>`; //cierra div card
+
+		cont++;
+		contTotal++;
+	}
+	aux += `</div>`; //cierra div fila
+
+	$('#contador').html(contTotal + ' resultados');
+
+	if (contTotal == 0) {
+		let aux2 = '';
+
+		$('#comics').addClass('btn-insert');
+
+		aux2 = `<a class="btn btn-primary align-items-end" href="../php/formularioInsertar.php">Crear nuevo</a>`;
+
+		$('#comics').html(aux2);
+	}
+	else {
+		$('#comics').html(aux);
+	}
 });
