@@ -49,7 +49,7 @@ $(document).ready(() => {
   aux2 += `<div class="row">`;//inicio div fila
 
   for (let i = 0; i < comicsEditorial.length; i++) {
-    if (cont == 3) {
+    if (cont === 3) {
       aux2 += `</div>`; // cierra div row
       aux2 += `<div class="row">`;//inicio de nuevo div fila
       cont = 0; //resetea el contador

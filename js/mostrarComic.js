@@ -3,7 +3,6 @@ import { launchQuery } from '../php/connection';
 const ID_USER = sessionStorage.getItem('idUsuario');
 
 let modalDatosComic = idComic => {
-
   let getComicData = `
 		SELECT nombreComic, sinopsis, anioPublicacion, portada, compra, guionista.idGuionista, 
 		nombreGuionista, ilustrador.idIlustrador, nombreIlustrador, editorial.idEditorial, nombreEditorial, 
@@ -227,7 +226,7 @@ let muestraComentarios = idComic => {
 
   let auxComentarios = '';
 
-  if (comentarios.length == 0) {
+  if (comentarios.length === 0) {
     auxComentarios += `<div class'row">`; //abre row
 
     auxComentarios += `<div class="col-md-10">`; //abre columna 1
@@ -285,7 +284,7 @@ let muestraComentarios = idComic => {
     }
   }
 
-  auxComentarios += `<form action="insertarComentario.php" method="post" enctype="multipart/form-data" id="formularioComentar">`; //abre formulario
+  auxComentarios += `<form onSubmit="${insertarComentario(idComic)}" method="post" enctype="multipart/form-data" id="formularioComentar">`; //abre formulario
 
   auxComentarios += `<div class="form-group col-md-12">`;  //abre form-group 1
   auxComentarios += `<label for="texto">Escribe tu comentario:</label>`;
@@ -301,6 +300,16 @@ let muestraComentarios = idComic => {
   auxComentarios += `</form>`; //cierra formulario
 
   $('#comentariosTab').html(auxComentarios);
+}
+
+let insertarComentario = idComic => {
+  let texto = document.querySelector("#texto");
+
+  let insertComentario = `
+    INSERT INTO comentario (texto,fechaComentario,votos,spoiler,idUsuario,idComic)
+    VALUES('${texto}',CURRENT_DATE,0,0,'${ID_USER}','${idComic}');
+  `;
+  launchQuery(insertComentario);
 }
 
 let verSpoiler = idComentario => {

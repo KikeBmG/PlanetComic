@@ -13,7 +13,7 @@ $(document).ready(() => {
   aux += `<div class='row'>`;//inicio div fila
 
   for (let i = 0; i < datosBusqueda.length; i++) {
-    if (cont == 3) {
+    if (cont === 3) {
       aux += `</div>`; // cierra div row
       aux += `<div class="row">`;//inicio de nuevo div fila
       cont = 0; //resetea el contador
@@ -64,7 +64,7 @@ $(document).ready(() => {
 
   $('#contador').html(contTotal + ' resultados');
 
-  if (contTotal == 0) {
+  if (contTotal === 0) {
     let aux2 = '';
 
     $('#comics').addClass('btn-insert');
