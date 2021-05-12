@@ -13,7 +13,7 @@
 	<title>Editorial</title>
 	<!--	CSS		-->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-	<link rel="stylesheet" href="../../css/main.css" type="text/css">
+	<link href="../../css/main.css" rel="stylesheet" type="text/css">
 	<link href="../../resources/plugins/star-rating/css/main.css" media="all" rel="stylesheet" type="text/css"/>
 	<!--	JavaScripts Bootstrap y jQuery		-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
