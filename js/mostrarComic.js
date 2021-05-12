@@ -1,3 +1,7 @@
+import { launchQuery } from '../php/connection';
+
+const ID_USER = sessionStorage.getItem('idUsuario');
+
 let modalDatosComic = idComic => {
 	$.getJSON('mostrarComic.php?idComic=' + idComic, data => {
 		let aux = '';
@@ -162,19 +166,12 @@ let modalDatosComic = idComic => {
 }
 
 let votaKarmaComic = (idComic, karma) => {
-	$.ajax({
-		type: 'POST',
-		url: '../php/votarKarmaComic.php',
-		data: {
-			idComic: idComic,
-			karma: karma
-		},
-		success: data => {
-			$('.votakarma').prop('disabled', true);
-			$('#feedbackKarmaComic').removeClass('none');
-			$('#feedbackKarmaComic').addClass('block');
-		}
-	});
+	let updateKarmaComic = `UPDATE comic SET karmaComic = karmaComic + ${karma} WHERE idComic = '${idComic}'`;
+	launchQuery(updateKarmaComic);
+
+	$('.votakarma').prop('disabled', true);
+	$('#feedbackKarmaComic').removeClass('none');
+	$('#feedbackKarmaComic').addClass('block');
 }
 
 let cambiaEstado = (vEstado, idComic) => {
@@ -313,35 +310,21 @@ let verSpoiler = idComentario => {
 }
 
 let votaKarmaComentario = (idComentario, spoiler) => {
-	$.ajax({
-		type: 'POST',
-		url: '../php/votarKarmaComentario.php',
-		data: {
-			idComentario: idComentario,
-			spoiler: spoiler
-		},
-		success: data => {
-			$('.votakarmaComentario' + idComentario).prop('disabled', true);
-			$('#feedbackKarmaComentario' + idComentario).removeClass('none');
-			$('#feedbackKarmaComentario' + idComentario).addClass('block');
-		}
-	});
+	let updateKarmaComentario = `UPDATE comentario SET votos = votos + 1, spoiler = spoiler + ${spoiler} WHERE idComentario = '${idComentario}'`;
+	launchQuery(updateKarmaComentario);
+
+	$('.votakarmaComentario' + idComentario).prop('disabled', true);
+	$('#feedbackKarmaComentario' + idComentario).removeClass('none');
+	$('#feedbackKarmaComentario' + idComentario).addClass('block');
 }
 
 let enviarVotacion = idComic => {
 	let voto = ($('#estrellas').val()) * 2;
 
 	if (voto !== null) {
-		$.ajax({
-			type: 'POST',
-			url: '../php/insertarPuntuacion.php',
-			data: {
-				idComic: idComic,
-				puntuacion: voto
-			},
-			success: data => {
-				$('#botonEnviarVotacion').addClass('disabled');
-			}
-		});
+		let insertVotacionComic = `INSERT INTO biblioteca (idUsuario,idComic,puntuacion) VALUES('${ID_USER}','${idComic}','${voto}') ON DUPLICATE KEY UPDATE puntuacion = '${voto}';`;
+		launchQuery(insertVotacionComic);
+
+		$('#botonEnviarVotacion').addClass('disabled');
 	}
 }
