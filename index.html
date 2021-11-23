@@ -13,9 +13,10 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
-<body>
+</head>
+<body class="bg-secondary-blue-400">
 	<div class="container">
-		<div class="jumbotron">
+		<div class="jumbotron texto-blanco">
 			<h1 class="display-3">Planet Comic</h1>
 			<p class="lead">Busca y comparte información de tus comic favoritos.</p>
 			<p class="lead">Crea tu propia biblioteca personalizada.</p>
@@ -37,10 +38,10 @@
 	<div class="modal fade" id="modalIniciarSesion" role="dialog">
 		<div class="modal-dialog">
 			<!-- Modal content-->
-			<div class="modal-content">
+			<div class="modal-content texto-blanco">
 				<div class="modal-header">
 					<h4 class="modal-title">Iniciar Sesión</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<button type="button" class="close texto-blanco" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
@@ -50,14 +51,14 @@
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="inputUsuarioI">Usuario</label>
 							<div class="col-sm-10">
-								<input type="text" class="form-control inputIndex" id="usuarioI" name="usuarioI"
+								<input type="text" class="form-control input-index bg-secondary-blue-200 texto-blanco" id="usuarioI" name="usuarioI"
 									placeholder="Nombre de Usuario" required />
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="inputContraseniaI">Contraseña</label>
 							<div class="col-sm-10">
-								<input type="password" class="form-control inputIndex" id="contraseniaI"
+								<input type="password" class="form-control input-index bg-secondary-blue-200 texto-blanco" id="contraseniaI"
 									name="contraseniaI" placeholder="Contraseña" required />
 							</div>
 						</div>
@@ -75,10 +76,10 @@
 	<div class="modal fade" id="modalRegistro" role="dialog">
 		<div class="modal-dialog">
 			<!-- Modal content-->
-			<div class="modal-content">
+			<div class="modal-content texto-blanco">
 				<div class="modal-header">
 					<h4 class="modal-title">Registro</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<button type="button" class="close texto-blanco" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
@@ -89,21 +90,21 @@
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="inputUsuarioR">Usuario</label>
 							<div class="col-sm-10">
-								<input type="text" class="form-control inputIndex" id="usuarioR" name="usuarioR"
+								<input type="text" class="form-control input-index bg-secondary-blue-200 texto-blanco" id="usuarioR" name="usuarioR"
 									placeholder="Nombre de Usuario" required />
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="inputContraseniaR">Contraseña</label>
 							<div class="col-sm-10">
-								<input type="password" class="form-control inputIndex" id="contraseniaR"
+								<input type="password" class="form-control input-index bg-secondary-blue-200 texto-blanco" id="contraseniaR"
 									name="contraseniaR" placeholder="Contraseña" required />
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-2 control-label" for="inputEmailR">Email</label>
 							<div class="col-sm-10">
-								<input type="email" class="form-control inputIndex" id="emailR" name="emailR"
+								<input type="email" class="form-control input-index bg-secondary-blue-200 texto-blanco" id="emailR" name="emailR"
 									placeholder="Correo Electrónico" required />
 							</div>
 						</div>

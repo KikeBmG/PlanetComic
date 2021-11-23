@@ -21,7 +21,7 @@
 	<!--	Textos y traducciones de las estrellas		-->
 	<script src="../../resources/plugins/star-rating/locales/es.js" type="text/javascript"></script>
 </head>
-<body>
+<body class="bg-secondary-blue-400">
 	<!--  Barra de Navegación	-->
 	<nav class="navbar navbar-toggleable-md bg-dark navbar-dark sticky-top">
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,11 +29,11 @@
 		</button>
 		<div class="navbar-brand">
 			<form class="form-inline my-2 my-lg-0" action="buscador.php" method="post">
-				<input class="form-control mr-sm-2 buscador" type="text" placeholder="Buscar" id="nombre" name="nombre">
+				<input class="form-control mr-sm-2 buscador texto-blanco bg-secondary-blue-200" type="text" placeholder="Buscar" id="nombre" name="nombre">
 				<button class="btn btn-primary my-2 my-sm-0" type="submit"><img src="../../resources/img/iconos/glyphicons-28-search.png" height="16px" alt="Buscar"></button>
 			</form>
 		</div>
-		<h5><a class="navbar-brand" href="main.php">Planet Comic</a></h5>
+		<h5 class="title-small block"><a class="navbar-brand" href="main.php">Planet Comic</a></h5>
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 			<ul class="navbar-nav mr-auto mt-2 mt-md-0">
 				<li class="nav-item">
@@ -55,7 +55,7 @@
 	</nav>
 	<!--  Contenido  -->
 	<div class="container" id="container">
-		<h3 id="contador" class="col-lg-11"></h3>
+		<h3 id="contador" class="col-lg-11 contador texto-blanco"></h3>
 		<div class="row menos-margen-inf">
 			<div class="col-sm-12 btn-group btn-group-toggle btn-insert" data-toggle="buttons">
 				<label class="btn btn-primary" id="lblEditorial">
@@ -78,14 +78,14 @@
 					<form action="insertarEditorial.php" method="post" enctype="multipart/form-data">
 						<div class="form-group">
 							<label for="nombreEditorial" class="texto-blanco">Nombre de la Editorial</label>
-							<input type="text" class="form-control inputFormulario texto-blanco" id="nombreEditorial" name="nombreEditorial" placeholder="Editorial" required>
+							<input type="text" class="form-control input-formulario bg-secondary-blue-200 texto-blanco" id="nombreEditorial" name="nombreEditorial" placeholder="Editorial" required>
 							<small class="form-text text-muted">El nombre de la editorial es un campo obligatorio.</small>
 						</div>
 						<div class="form-group">
 							<label for="exampleInputFile" class="texto-blanco">Logo de la Editorial</label>
 							<div class="custom-file">
 							   <input id="logo" type="file" class="custom-file-input" name="logo" required accept="image/*">
-							   <label for="logo" class="custom-file-label inputFormulario">Subir logo...</label>
+							   <label for="logo" class="custom-file-label input-formulario bg-secondary-blue-200">Subir logo...</label>
 							</div>
 							
 							<small id="fileHelp" class="form-text text-muted">El logo de la editorial es un campo obligatorio.</small>
@@ -97,24 +97,24 @@
 					<form action="insertarGuionista.php" method="post" enctype="multipart/form-data">
 						<div class="form-group">
 							<label for="nombreGuionista" class="texto-blanco">Nombre del Guionista</label>
-							<input type="text" class="form-control inputFormulario texto-blanco" id="nombreGuionista" name="nombreGuionista" placeholder="Nombre" required>
+							<input type="text" class="form-control input-formulario bg-secondary-blue-200 texto-blanco" id="nombreGuionista" name="nombreGuionista" placeholder="Nombre" required>
 							<small class="form-text text-muted">El nombre del guionista es un campo obligatorio.</small>
 						</div>
 						<div class="form-group">
 							<label for="nacionalidadGuionista" class="texto-blanco">Nacionalidad del Guionista</label>
-							<input type="text" class="form-control inputFormulario texto-blanco" id="nacionalidadGuionista" name="nacionalidadGuionista" placeholder="Nacionalidad" required>
+							<input type="text" class="form-control input-formulario bg-secondary-blue-200 texto-blanco" id="nacionalidadGuionista" name="nacionalidadGuionista" placeholder="Nacionalidad" required>
 							<small class="form-text text-muted">La nacionalidad del guionista es un campo obligatorio.</small>
 						</div>
 						<div class="form-group">
 							<label for="fechaNacGuionista" class="texto-blanco">Fecha de nacimiento del Guionista</label>
-							<input type="text" class="form-control inputFormulario texto-blanco" id="fechaNacGuionista" name="fechaNacGuionista" placeholder="Fecha de nacimiento" required pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])">
+							<input type="text" class="form-control input-formulario bg-secondary-blue-200 texto-blanco" id="fechaNacGuionista" name="fechaNacGuionista" placeholder="Fecha de nacimiento" required pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])">
 							<small class="form-text text-muted">La fecha de nacimiento del guionista es un campo obligatorio y debe seguir el patrón YYYY-MM-DD.</small>
 						</div>
 						<div class="form-group">
 							<label for="exampleInputFile" class="texto-blanco">Foto del Guionista</label>
 							<div class="custom-file">
 								<input id="fotoGuionista" type="file" class="custom-file-input" name="fotoGuionista" required accept="image/*">
-								<label for="fotoGuionista" class="custom-file-label inputFormulario">Subir foto...</label>
+								<label for="fotoGuionista" class="custom-file-label input-formulario bg-secondary-blue-200">Subir foto...</label>
 							</div>
 							<small id="fileHelp" class="form-text text-muted">La foto del guionista es un campo obligatorio.</small>
 						</div>
@@ -125,24 +125,24 @@
 					<form action="insertarIlustrador.php" method="post" enctype="multipart/form-data">
 						<div class="form-group">
 							<label for="nombreIlustrador" class="texto-blanco">Nombre del Ilustrador</label>
-							<input type="text" class="form-control inputFormulario texto-blanco" id="nombreIlustrador" name="nombreIlustrador" placeholder="Nombre" required>
+							<input type="text" class="form-control input-formulario bg-secondary-blue-200 texto-blanco" id="nombreIlustrador" name="nombreIlustrador" placeholder="Nombre" required>
 							<small class="form-text text-muted">El nombre del ilustrador es un campo obligatorio.</small>
 						</div>
 						<div class="form-group">
 							<label for="nacionalidadIlustrador" class="texto-blanco">Nacionalidad del Ilustrador</label>
-							<input type="text" class="form-control inputFormulario texto-blanco" id="nacionalidadIlustrador" name="nacionalidadIlustrador" placeholder="Nacionalidad" required>
+							<input type="text" class="form-control input-formulario bg-secondary-blue-200 texto-blanco" id="nacionalidadIlustrador" name="nacionalidadIlustrador" placeholder="Nacionalidad" required>
 							<small class="form-text text-muted">La nacionalidad del ilustrador es un campo obligatorio.</small>
 						</div>
 						<div class="form-group">
 							<label for="fechaNacIlustrador" class="texto-blanco">Fecha de nacimiento del Ilustrador</label>
-							<input type="text" class="form-control inputFormulario texto-blanco" id="fechaNacIlustrador" name="fechaNacIlustrador" placeholder="Fecha de nacimiento" required pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])">
+							<input type="text" class="form-control input-formulario bg-secondary-blue-200 texto-blanco" id="fechaNacIlustrador" name="fechaNacIlustrador" placeholder="Fecha de nacimiento" required pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])">
 							<small class="form-text text-muted">La fecha de nacimiento del ilustrador es un campo obligatorio y debe seguir el patrón YYYY-MM-DD.</small>
 						</div>
 						<div class="form-group">
 							<label for="exampleInputFile" class="texto-blanco">Foto del Ilustrador</label>
 							<div class="custom-file">
 								<input id="fotoGIlustrador" type="file" class="custom-file-input" name="fotoIlustrador" required accept="image/*">
-								<label for="fotoIlustrador" class="custom-file-label inputFormulario">Subir foto...</label>
+								<label for="fotoIlustrador" class="custom-file-label input-formulario bg-secondary-blue-200">Subir foto...</label>
 							</div>
 							<small id="fileHelp" class="form-text text-muted">La foto del ilustrador es un campo obligatorio.</small>
 						</div>
@@ -153,47 +153,47 @@
 					<form action="insertarComic.php" method="post" enctype="multipart/form-data">
 						<div class="form-group">
 							<label for="nombreComic" class="texto-blanco">Nombre del Comic</label>
-							<input type="text" class="form-control inputFormulario texto-blanco" id="nombreComic" name="nombreComic" placeholder="Nombre" required>
+							<input type="text" class="form-control input-formulario bg-secondary-blue-200 texto-blanco" id="nombreComic" name="nombreComic" placeholder="Nombre" required>
 							<small class="form-text text-muted">El nombre del comic es un campo obligatorio.</small>
 						</div>
 						<div class="form-group">
 							<label for="sinopsis" class="texto-blanco">Sinopsis del Comic</label>
-							<textarea class="form-control inputFormulario texto-blanco" id="sinopsis" name="sinopsis" placeholder="Sinopsis" required></textarea>
+							<textarea class="form-control input-formulario bg-secondary-blue-200 texto-blanco" id="sinopsis" name="sinopsis" placeholder="Sinopsis" required></textarea>
 							<small class="form-text text-muted">La sinopsis del comic es un campo obligatorio.</small>
 						</div>
 						<div class="form-group">
 							<label for="anioPublicacion" class="texto-blanco">Año de publicación del Comic</label>
-							<input type="text" class="form-control inputFormulario texto-blanco" id="anioPublicacion" name="anioPublicacion" placeholder="Publicación" required pattern="^(19|20)\d{2}$">
+							<input type="text" class="form-control input-formulario bg-secondary-blue-200 texto-blanco" id="anioPublicacion" name="anioPublicacion" placeholder="Publicación" required pattern="^(19|20)\d{2}$">
 							<small class="form-text text-muted">El año de publicación del comic es un campo obligatorio y debe ser un número de 4 digitos a partir de 1900.</small>
 						</div>
 						<div class="form-group">
 							<label for="exampleInputFile" class="texto-blanco">Portada del Comic</label>
 							<div class="custom-file">
 								<input id="portada" type="file" class="custom-file-input" name="portada" required accept="image/*">
-								<label for="portada" class="custom-file-label inputFormulario">Subir foto...</label>
+								<label for="portada" class="custom-file-label input-formulario bg-secondary-blue-200">Subir foto...</label>
 							</div>
 							<small id="fileHelp" class="form-text text-muted">La portada del comic es un campo obligatorio.</small>
 						</div>
 						<div class="form-group">
 							<label for="compra" class="texto-blanco">Enlace de compra</label>
-							<input type="text" class="form-control inputFormulario texto-blanco" id="compra" name="compra" placeholder="Enlace" required pattern="(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9]\.[^\s]{2,})">
+							<input type="text" class="form-control input-formulario bg-secondary-blue-200 texto-blanco" id="compra" name="compra" placeholder="Enlace" required pattern="(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9]\.[^\s]{2,})">
 							<small class="form-text text-muted">El enlace de compra del comic es un campo obligatorio.</small>
 						</div>
 						<div class="form-group">
 							<label for="idEditorial" class="texto-blanco">Editorial del Comic</label>
-							<select class="form-control inputFormulario texto-blanco" id="selectEditorial" name="idEditorial" required>
+							<select class="form-control input-formulario bg-secondary-blue-200 texto-blanco" id="selectEditorial" name="idEditorial" required>
 							</select>
 							<small class="form-text text-muted">La editorial del comic es un campo obligatorio.</small>
 						</div>
 						<div class="form-group">
 							<label for="idGuionista" class="texto-blanco">Guionista del Comic</label>
-							<select class="form-control inputFormulario texto-blanco" id="selectGuionista" name="idGuionista" required>
+							<select class="form-control input-formulario bg-secondary-blue-200 texto-blanco" id="selectGuionista" name="idGuionista" required>
 							</select>
 							<small class="form-text text-muted">El guionista del comic es un campo obligatorio.</small>
 						</div>
 						<div class="form-group">
 							<label for="idIlustrador" class="texto-blanco">Ilustrador del Comic</label>
-							<select class="form-control inputFormulario texto-blanco" id="selectIlustrador" name="idIlustrador" required>
+							<select class="form-control input-formulario bg-secondary-blue-200 texto-blanco" id="selectIlustrador" name="idIlustrador" required>
 							</select>
 							<small class="form-text text-muted">El ilustrador del comic es un campo obligatorio.</small>
 						</div>

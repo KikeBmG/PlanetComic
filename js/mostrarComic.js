@@ -19,11 +19,11 @@ let modalDatosComic = idComic => {
 
   aux += `<div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">`; //inicio modal
   aux += `<div class="modal-dialog modal-lg" role="document">`; //abre modal dialog
-  aux += `<div class="modal-content">`; //abre modal content
+  aux += `<div class="modal-content texto-blanco">`; //abre modal content
 
   aux += `<div class="modal-header">`; //abre modal header
   aux += `<h4 class="modal-title">${comicData[0].nombreComic}</h4>`;
-  aux += `<button type="button" class="close" data-dismiss="modal" aria-label="Close">`;
+  aux += `<button type="button" class="close texto-blanco" data-dismiss="modal" aria-label="Close">`;
   aux += `<span aria-hidden="true">&times;</span>`;
   aux += `</button>`;
   aux += `</div>`; //cierra el modal header
@@ -33,8 +33,8 @@ let modalDatosComic = idComic => {
   aux += `<div role="tabpanel">`; //abre tabpanel
 
   aux += `<ul class="nav nav-tabs" role="tablist">`; //abre Nav tabs
-  aux += `<li role="presentation" class="nav-item active"><a href="#datosTab" aria-controls="datosTab" role="tab" data-toggle="tab" class="nav-link botonesTab active">Datos</a></li>`;
-  aux += `<li role="presentation" class="nav-item"><a href="#comentariosTab" aria-controls="comentariosTab" role="tab" data-toggle="tab" class="nav-link botonesTab" onClick="${muestraComentarios(idComic)}">Comentarios</a></li>`;
+  aux += `<li role="presentation" class="nav-item active"><a href="#datosTab" aria-controls="datosTab" role="tab" data-toggle="tab" class="nav-link botones-tab bg-secondary-blue-400 active">Datos</a></li>`;
+  aux += `<li role="presentation" class="nav-item"><a href="#comentariosTab" aria-controls="comentariosTab" role="tab" data-toggle="tab" class="nav-link botones-tab bg-secondary-blue-400" onClick="${muestraComentarios(idComic)}">Comentarios</a></li>`;
   aux += `</ul>`; //cierra Nav tabs
 
   aux += `<div class="tab-content">`; //abre tab-content
@@ -49,23 +49,23 @@ let modalDatosComic = idComic => {
 
   aux += `<div class="botones-modal">`; //abre div botones
 
-  aux += `<span class="btn botonEstadoComic disabled menos-margen-inf" id="mediaGlobal">Valoración Global: ${comicData[0].mediaglobal}</span>`;
-  aux += `<span class="btn botonEstadoComic disabled" id="media"></span>`;
+  aux += `<span class="btn boton-estado-comic disabled menos-margen-inf" id="mediaGlobal">Valoración Global: ${comicData[0].mediaglobal}</span>`;
+  aux += `<span class="btn boton-estado-comic disabled" id="media"></span>`;
 
   aux += `<form>`; //abre formulario estrellas
   aux += `<input id="estrellas" name="puntuacion" type="text" class="rating" data-min=0 data-max=5 data-step=0.5 data-size="xs" required>`;
-  aux += `<button type="submit" class="btn btn-sample botonEstadoComic menos-margen-inf" id="botonEnviarVotacion" onClick="${enviarVotacion(idComic)}">Votar</button>`;
+  aux += `<button type="submit" class="btn btn-sample boton-estado-comic menos-margen-inf texto-blanco" id="botonEnviarVotacion" onClick="${enviarVotacion(idComic)}">Votar</button>`;
   aux += `</form>`; //cierra formulario estrellas
 
-  aux += `<p><button type="button" id="botonLeido" class="btn btn-primary botonEstadoComic" onClick="${cambiaEstado('Leido', idComic)}" value="Leido">Leido</button></p>`; // boton Leido
-  aux += `<p><button type="button" id="botonLeyendo" class="btn btn-primary botonEstadoComic" onClick="${cambiaEstado('Leyendo', idComic)}" value="Leyendo">Leyendo</button></p>`; // boton Leyendo
-  aux += `<p><button type="button" id="botonPendiente" class="btn btn-primary botonEstadoComic" onClick="${cambiaEstado('Pendiente', idComic)}" value="Leyendo">Pendiente</button></p>`; // boton Pendiente
+  aux += `<p><button type="button" id="botonLeido" class="btn btn-primary boton-estado-comic" onClick="${cambiaEstado('Leido', idComic)}" value="Leido">Leido</button></p>`; // boton Leido
+  aux += `<p><button type="button" id="botonLeyendo" class="btn btn-primary boton-estado-comic" onClick="${cambiaEstado('Leyendo', idComic)}" value="Leyendo">Leyendo</button></p>`; // boton Leyendo
+  aux += `<p><button type="button" id="botonPendiente" class="btn btn-primary boton-estado-comic" onClick="${cambiaEstado('Pendiente', idComic)}" value="Leyendo">Pendiente</button></p>`; // boton Pendiente
 
   aux += `<p class="margen-izquierdo-3"><button class="btn btn-success my-2 my-sm-0 margen-derecho-1 votakarma" onClick="${votaKarmaComic(idComic, (+1))}"><img src="../resources/img/iconos/glyphicons-344-thumbs-up.png" height="16px" alt="positivo"></button>`; // boton karma positivo
 
   aux += `<button class="btn btn-danger my-2 my-sm-0 votakarma" onClick="${votaKarmaComic(idComic, (-1))}"><img src="../resources/img/iconos/glyphicons-345-thumbs-down.png" height="16px" alt="negativo"></button></p>`; // boton karma negativo
 
-  aux += `<small class="none" id="feedbackKarmaComic">¡Gracias por votar!</small>`;
+  aux += `<small class="none feedback-karma-comic" id="feedbackKarmaComic">¡Gracias por votar!</small>`;
 
   aux += `</div>`; //cierra div botones
   aux += `</div>`; //cierra columna 1
@@ -194,21 +194,21 @@ let cambiaEstado = (vEstado, idComic) => {
     case 'Leido':
       $('#botonLeyendo').removeClass('btn-warning');
       $('#botonPendiente').removeClass('btn-danger');
-      $('.botonEstadoComic').addClass('btn-primary');
+      $('.boton-estado-comic').addClass('btn-primary');
       $('#botonLeido').removeClass('btn-primary');
       $('#botonLeido').addClass('btn-success');
       break;
     case 'Leyendo':
       $('#botonLeido').removeClass('btn-success');
       $('#botonPendiente').removeClass('btn-danger');
-      $('.botonEstadoComic').addClass('btn-primary');
+      $('.boton-estado-comic').addClass('btn-primary');
       $('#botonLeyendo').removeClass('btn-primary');
       $('#botonLeyendo').addClass('btn-warning');
       break;
     case 'Pendiente':
       $('#botonLeido').removeClass('btn-success');
       $('#botonLeyendo').removeClass('btn-warning');
-      $('.botonEstadoComic').addClass('btn-primary');
+      $('.boton-estado-comic').addClass('btn-primary');
       $('#botonPendiente').removeClass('btn-primary');
       $('#botonPendiente').addClass('btn-danger');
       break;
@@ -244,8 +244,8 @@ let muestraComentarios = idComic => {
 
       auxComentarios += `<div class="col-md-12 botones-modal">`; //abre columna 1
 
-      auxComentarios += `<div class="card card-comentarios">`; //abre card
-      auxComentarios += `<div class="card-body card-body-comentarios">`; //abre card-body
+      auxComentarios += `<div class="card bg-secondary-blue-100 card-comentarios">`; //abre card
+      auxComentarios += `<div class="card-body card-body-comentarios bg-secondary-blue-400">`; //abre card-body
 
       auxComentarios += `<h4>${comentarios[i].nombreUsuario}</h4>`;
 
@@ -284,11 +284,11 @@ let muestraComentarios = idComic => {
     }
   }
 
-  auxComentarios += `<form onSubmit="${insertarComentario(idComic)}" method="post" enctype="multipart/form-data" id="formularioComentar">`; //abre formulario
+  auxComentarios += `<form id="formularioComentar" class="form-comentar" onSubmit="${insertarComentario(idComic)}" method="post" enctype="multipart/form-data">`; //abre formulario
 
   auxComentarios += `<div class="form-group col-md-12">`;  //abre form-group 1
   auxComentarios += `<label for="texto">Escribe tu comentario:</label>`;
-  auxComentarios += `<textarea class="form-control inputFormulario texto-blanco" rows="4" id="texto" name="texto" placeholder="Escribe aqui tu comentario..." required></textarea>`;
+  auxComentarios += `<textarea class="form-control input-formulario bg-secondary-blue-200 texto-blanco" rows="4" id="texto" name="texto" placeholder="Escribe aqui tu comentario..." required></textarea>`;
   auxComentarios += `</div>`; //cierra form-group 1
 
   auxComentarios += `<input type="hidden" name="idComic" value="${idComic}">`;

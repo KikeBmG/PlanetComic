@@ -1,7 +1,7 @@
 import { launchQuery } from '../php/connection';
 
 $(document).ready(() => {
-  let idEditorial = $('span.invisible').attr('id');
+  let idEditorial = $('span.none').attr('id');
 
   let getDatosEditorial = `SELECT idEditorial, nombreEditorial, logo FROM editorial WHERE idEditorial = '${idEditorial}'`;
   let datosEditorial = launchQuery(getDatosEditorial);
@@ -55,7 +55,7 @@ $(document).ready(() => {
       cont = 0; //resetea el contador
     }
 
-    aux2 += `<div class="card bg-dark text-white" style="width: 20rem;">`; //dentro del div columna inicio un div card
+    aux2 += `<div class="card bg-secondary-blue-100 text-white" style="width: 20rem;">`; //dentro del div columna inicio un div card
 
     aux2 += `<img src="../resources/img/portadas/${comicsEditorial[i].portada}' class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
     aux2 += `<div class="card-block">`; // abre card-block

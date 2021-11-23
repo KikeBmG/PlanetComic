@@ -26,7 +26,7 @@
 	<!--	Textos y traducciones de las estrellas		-->
 	<script src="../../resources/plugins/star-rating/locales/es.js" type="text/javascript"></script>
 </head>
-<body>
+<body class="bg-secondary-blue-400">
 	<!--  Barra de Navegación	-->
 	<nav class="navbar navbar-toggleable-md bg-dark navbar-dark sticky-top">
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,11 +34,11 @@
 		</button>
 		<div class="navbar-brand">
 			<form class="form-inline my-2 my-lg-0" action="buscador.php" method="post">
-				<input class="form-control mr-sm-2 buscador" type="text" placeholder="Buscar" id="nombre" name="nombre">
+				<input class="form-control mr-sm-2 buscador texto-blanco bg-secondary-blue-200" type="text" placeholder="Buscar" id="nombre" name="nombre">
 				<button class="btn btn-primary my-2 my-sm-0" type="submit"><img src="../../resources/img/iconos/glyphicons-28-search.png" height="16px" alt="Buscar"></button>
 			</form>
 		</div>
-		<h5><a class="navbar-brand" href="main.php">Planet Comic</a></h5>
+		<h5 class="title-small block"><a class="navbar-brand" href="main.php">Planet Comic</a></h5>
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 			<ul class="navbar-nav mr-auto mt-2 mt-md-0">
 				<li class="nav-item">
@@ -60,7 +60,7 @@
 	</nav>
 	<!--  Contenido  -->
 	<div class="container" id="container">
-		<h3 id="contador" class="col-lg-11"></h3>
+		<h3 id="contador" class="col-lg-11 contador texto-blanco"></h3>
 		<div class="row menos-margen-inf">
 			<div class="col-sm-12">
 				<div id="datos"></div>
@@ -73,6 +73,6 @@
 		</div>
 	</div>
 	<div id="modal"></div>
-	<span class="invisible" id="<?php echo $nombre; ?>"></span>
+	<span class="none" id="<?php echo $nombre; ?>"></span>
 </body>
 </html>

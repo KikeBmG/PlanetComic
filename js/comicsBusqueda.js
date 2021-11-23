@@ -1,7 +1,7 @@
 import { launchQuery } from '../php/connection';
 
 $(document).ready(() => {
-  let nombre = $('span.invisible').attr('id');
+  let nombre = $('span.none').attr('id');
 
   let getDatosBusqueda = `SELECT id, nombre, foto, tipo FROM busqueda WHERE nombre like '%${nombre}%'`;
   let datosBusqueda = launchQuery(getDatosBusqueda);
@@ -19,7 +19,7 @@ $(document).ready(() => {
       cont = 0; //resetea el contador
     }
 
-    aux += `<div class="card bg-dark text-white" style="width: 20rem;">`; //dentro del div columna inicio un div card
+    aux += `<div class="card bg-secondary-blue-100 text-white" style="width: 20rem;">`; //dentro del div columna inicio un div card
 
     switch (datosBusqueda[i].tipo) {
       case 'guionista':

@@ -12,7 +12,7 @@ let calculate_age = dob => {
 }
 
 $(document).ready(() => {
-  let idGuionista = $('span.invisible').attr('id');
+  let idGuionista = $('span.none').attr('id');
 
   let getDatosGuionista = `SELECT idGuionista, nombreGuionista, nacionalidadGuionista, fotoGuionista, fechaNacGuionista FROM guionista WHERE idGuionista = '${idGuionista}'`;
   let datosGuionista = launchQuery(getDatosGuionista);
@@ -80,7 +80,7 @@ $(document).ready(() => {
       cont = 0; //resetea el contador
     }
 
-    aux2 += `<div class="card bg-dark text-white" style="width: 20rem;">`; //dentro del div columna inicio un div card
+    aux2 += `<div class="card bg-secondary-blue-100 text-white" style="width: 20rem;">`; //dentro del div columna inicio un div card
 
     aux2 += `<img src="../resources/img/portadas/${comicsGuionista[i].portada}" class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
     aux2 += `<div class="card-block">`; // abre card-block

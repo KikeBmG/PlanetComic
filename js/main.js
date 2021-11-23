@@ -27,11 +27,11 @@ let marcaActivo = elem => {
   elem.classList.add('active');
   elem.classList.add('h5');
 
-  $('span.invisible').attr('id', elem.id);
+  $('span.none').attr('id', elem.id);
 }
 
 let mostrarComicsEstado = () => {
-  let estado = $('span.invisible').attr('id') !== '' ? $('span.invisible').attr('id') : 'Leyendo';
+  let estado = $('span.none').attr('id') !== '' ? $('span.none').attr('id') : 'Leyendo';
 
   let getComicsUsuario = `
     SELECT portada, nombreComic, comic.idComic  
@@ -54,7 +54,7 @@ let mostrarComicsEstado = () => {
       cont = 0; //resetea el contador
     }
 
-    aux += `<div class="card bg-dark text-white" style="width: 20rem;">`; //dentro del div columna inicio un div card
+    aux += `<div class="card bg-secondary-blue-100 text-white" style="width: 20rem;">`; //dentro del div columna inicio un div card
 
     aux += `<img src="../resources/img/portadas/${comicsUsuario[i].portada}" class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
     aux += `<div class="card-block">`; // abre card-block
