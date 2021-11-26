@@ -19,7 +19,7 @@ let modalDatosComic = idComic => {
 
   aux += `<div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">`; //inicio modal
   aux += `<div class="modal-dialog modal-lg" role="document">`; //abre modal dialog
-  aux += `<div class="modal-content texto-blanco">`; //abre modal content
+  aux += `<div class="modal-content bg-secondary-blue-100 texto-blanco">`; //abre modal content
 
   aux += `<div class="modal-header">`; //abre modal header
   aux += `<h4 class="modal-title">${comicData[0].nombreComic}</h4>`;
@@ -288,7 +288,7 @@ let muestraComentarios = idComic => {
 
   auxComentarios += `<div class="form-group col-md-12">`;  //abre form-group 1
   auxComentarios += `<label for="texto">Escribe tu comentario:</label>`;
-  auxComentarios += `<textarea class="form-control input-formulario bg-secondary-blue-200 texto-blanco" rows="4" id="texto" name="texto" placeholder="Escribe aqui tu comentario..." required></textarea>`;
+  auxComentarios += `<textarea class="form-control input-formulario bg-secondary-blue-200 texto-blanco border-primary-blue-100" rows="4" id="texto" name="texto" placeholder="Escribe aqui tu comentario..." required></textarea>`;
   auxComentarios += `</div>`; //cierra form-group 1
 
   auxComentarios += `<input type="hidden" name="idComic" value="${idComic}">`;

@@ -28,9 +28,6 @@
   color: var(--primaryWhite) !important;
 }
 
-.jumbotron,
-.navbar,
-.modal-content,
 .bg-secondary-blue-100 {
   background-color: var(--secondaryBlue100) !important;
 }
@@ -44,10 +41,6 @@
 }
 
 .border-primary-blue-100,
-.navbar-toggler,
-.input-formulario,
-.input-index,
-.buscador,
 .custom-file-input ~ .custom-file-label::after {
   border-color: var(--primaryBlue100) !important;
 }

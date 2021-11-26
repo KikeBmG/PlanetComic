@@ -28,13 +28,13 @@
 </head>
 <body class="bg-secondary-blue-400">
 	<!--  Barra de Navegación	-->
-	<nav class="navbar navbar-toggleable-md bg-dark navbar-dark sticky-top">
-		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+	<nav class="navbar navbar-toggleable-md bg-secondary-blue-100 sticky-top">
+		<button class="navbar-toggler navbar-toggler-right border-primary-blue-100" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="navbar-brand">
 			<form class="form-inline my-2 my-lg-0" action="buscador.php" method="post">
-				<input class="form-control mr-sm-2 buscador texto-blanco bg-secondary-blue-200" type="text" placeholder="Buscar" id="nombre" name="nombre">
+				<input class="form-control mr-sm-2 buscador texto-blanco bg-secondary-blue-200 border-primary-blue-100" type="text" placeholder="Buscar" id="nombre" name="nombre">
 				<button class="btn btn-primary my-2 my-sm-0" type="submit"><img src="../../resources/img/iconos/glyphicons-28-search.png" height="16px" alt="Buscar"></button>
 			</form>
 		</div>
