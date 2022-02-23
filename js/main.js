@@ -54,15 +54,15 @@ let mostrarComicsEstado = () => {
       cont = 0; //resetea el contador
     }
 
-    aux += `<div class="card bg-secondary-blue-100 text-white" style="width: 20rem;">`; //dentro del div columna inicio un div card
-
-    aux += `<img src="../resources/img/portadas/${comicsUsuario[i].portada}" class="card-img-top" width="320px" height="500px">`; //imagen dentro del div item
-    aux += `<div class="card-block">`; // abre card-block
-    aux += `<h4 class="card-title">${comicsUsuario[i].nombreComic}</h4>`;
-    aux += `<a class="btn btn-primary align-items-end" href="#myModal" onClick="${modalDatosComic(comicsUsuario[i].idComic)}" data-toggle="modal" data-target=".bd-example-modal-lg">Ver detalles</a>`;
-
-    aux += `</div>`; //cierra div card-block
-    aux += `</div>`; //cierra div card
+    aux += `
+      <div class="card bg-secondary-blue-100 text-white" style="width: 20rem;">
+        <img src="../resources/img/portadas/${comicsUsuario[i].portada}" class="card-img-top" width="320px" height="500px">
+        <div class="card-block">
+          <h4 class="card-title">${comicsUsuario[i].nombreComic}</h4>
+          <a class="btn btn-primary align-items-end" href="#myModal" onClick="${modalDatosComic(comicsUsuario[i].idComic)}" data-toggle="modal" data-target=".bd-example-modal-lg">Ver detalles</a>
+        </div>
+      </div>
+    `;
 
     cont++;
     contTotal++;
