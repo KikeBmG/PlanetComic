@@ -237,7 +237,7 @@ let muestraComentarios = idComic => {
             <div class="card bg-secondary-blue-100 card-comentarios">
               <div class="card-body card-body-comentarios bg-secondary-blue-400">
                 <h4>${comentarios[i].nombreUsuario}</h4>
-                <p class="card-text ${comentarios[i].spoiler < 0 ? 'none' : 'block'}" id="comentario${comentarios[i].idComentario}">${comentarios[i].texto}</p>
+                <<p class="card-text ${comentarios[i].spoiler < 0 ? 'none' : 'block'}" id="comentario${comentarios[i].idComentario}">${comentarios[i].texto}</p>
                 <div class="card-footer text-muted">
                   <ul class="list-inline margin-bottom-0">
                     <button class="btn btn-success my-2 my-sm-0 margen-derecho-1 votakarmaComentario${comentarios[i].idComentario}" onClick="${votaKarmaComentario(comentarios[i].idComentario, (+1))}">
@@ -248,7 +248,7 @@ let muestraComentarios = idComic => {
                     </button>
                     <li class="list-inline-item">${comentarios[i].votos} votos</li>
                     <li class="list-inline-item">${comentarios[i].fechaComentario}</li>
-                    ${comentarios[i].spoiler < 0 ? `<li class="list-inline-item"><button class=" btn btn-warning" onClick="${verSpoiler(comentarios[i].idComentario)}">Ver spoiler</button></li>`: ''}
+                    ${comentarios[i].spoiler < 0 ? `<li class="list-inline-item"><button class=" btn btn-warning" onClick="${verSpoiler(comentarios[i].idComentario)}">Ver spoiler</button></li>` : ''}
                   </ul>
                   <small class="none" id="feedbackKarmaComentario${comentarios[i].idComentario}">¡Gracias por votar!</small>
                 </div>
