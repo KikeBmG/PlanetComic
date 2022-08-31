@@ -23,7 +23,6 @@ let marcaActivo = elem => {
     links[i].classList.remove('active')
     links[i].classList.remove('h5')
   }
-  
 
   elem.classList.add('active');
   elem.classList.add('h5');
