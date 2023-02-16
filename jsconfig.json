@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@php/*": ["app/php/*"],
+      "@styles/*": ["app/css/*"],
+      "@js/*": ["app/js/*"],
+      "@components/*": ["app/components/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}
