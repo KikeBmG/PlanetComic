@@ -1,14 +1,14 @@
-import { css, LitElement, html } from 'lit';
+import { LitElement, html } from 'lit';
+import styles from './login-modal-styles.js';
 
 export class LoginModal extends LitElement {
   static get is() {
     return 'login-modal';
   }
-  static styles = css`
-    p {
-      color: blue;
-    }
-  `;
+
+  static get styles() {
+    return styles;
+  }
 
   static get properties() {
     return {
